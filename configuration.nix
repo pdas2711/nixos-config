@@ -87,6 +87,7 @@
 	iwd
 	hyprpaper
 	hyprlock
+	waybar
 	vlock
 	wl-clipboard
 	(pass.withExtensions (exts: [ exts.pass-otp ]))
