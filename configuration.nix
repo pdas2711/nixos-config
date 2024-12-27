@@ -85,6 +85,11 @@
 	gnupg
 	pinentry-tty
 	iwd
+	hyprpaper
+	hyprlock
+	vlock
+	pass
+	wl-clipboard
   ];
 
 	# Hyprland
