@@ -88,8 +88,9 @@
 	hyprpaper
 	hyprlock
 	vlock
-	pass
 	wl-clipboard
+	(pass.withExtensions (exts: [ exts.pass-otp ]))
+	pass
   ];
 
 	# Hyprland
