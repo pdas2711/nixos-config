@@ -95,6 +95,11 @@
 	wl-clipboard
 	(pass.withExtensions (exts: [ exts.pass-otp ]))
 	pass
+	pavucontrol
+	zoxide
+	zsh-syntax-highlighting
+	python3
+	ranger
   ];
 
 	# Hyprland
