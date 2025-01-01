@@ -71,7 +71,10 @@
 
 	# Enabling applications
 	programs.firefox.enable = true;
-	programs.zsh.enable = true;
+	programs.zsh = {
+		enable = true;
+		syntaxHighlighting.enable = true;
+	};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
