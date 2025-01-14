@@ -78,29 +78,30 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-	neovim
-	tmux
-    	wget
-	alacritty
-	zsh
-	git
-	gnupg
-	pinentry-tty
-	iwd
-	hyprpaper
-	hyprlock
-	waybar
-	vlock
-	wl-clipboard
-	(pass.withExtensions (exts: [ exts.pass-otp ]))
-	pass
-	pavucontrol
-	zoxide
-	zsh-syntax-highlighting
-	python3
-	ranger
-  ];
+	environment.systemPackages = with pkgs; [
+		neovim
+		tmux
+		wget
+		alacritty
+		zsh
+		git
+		unstable.git-filter-repo
+		gnupg
+		pinentry-tty
+		iwd
+		hyprpaper
+		hyprlock
+		waybar
+		vlock
+		wl-clipboard
+		(pass.withExtensions (exts: [ exts.pass-otp ]))
+		pass
+		pavucontrol
+		zoxide
+		zsh-syntax-highlighting
+		python3
+		ranger
+	];
 
 	# Hyprland
 	programs.hyprland = {
