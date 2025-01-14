@@ -104,6 +104,7 @@
 		ranger
 		wlsunset
 		stow
+		trash-cli
 	];
 
 	# Hyprland
