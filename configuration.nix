@@ -103,6 +103,7 @@
 		python3
 		ranger
 		wlsunset
+		stow
 	];
 
 	# Hyprland
