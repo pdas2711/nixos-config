@@ -85,6 +85,7 @@
 		alacritty
 		zsh
 		git
+		pkgsUnstable.git-filter-repo
 		gnupg
 		pinentry-tty
 		iwd
