@@ -91,6 +91,7 @@
 		iwd
 		hyprpaper
 		hyprlock
+		hyprshot
 		waybar
 		vlock
 		wl-clipboard
@@ -101,6 +102,7 @@
 		zsh-syntax-highlighting
 		python3
 		ranger
+		wlsunset
 	];
 
 	# Hyprland
