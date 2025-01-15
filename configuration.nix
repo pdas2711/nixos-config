@@ -20,6 +20,23 @@
 		};
 	};
 
+	boot.kernelParams = [ "ip=169.168.1.1::169.168.1.0:255.255.255.252::enp6s0:off" ];
+	boot.initrd = {
+		systemd.users.root.shell = "/bin/cryptsetup-askpass";
+		network = {
+			enable = true;
+			ssh = {
+				shell = "/bin/cryptsetup-askpass";
+				enable = true;
+				port = 23;
+				authorizedKeys = [
+					"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIHMTMLADSEtAhxuBzgzngIhx7LZfo5vfnTaPzyRhPBx root@xansaware"
+				];
+				hostKeys = [ "/etc/ssh/initrd/ssh_host_ed25519_key" ];
+			};
+		};
+	};
+
   networking.hostName = "xansaware"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
