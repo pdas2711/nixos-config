@@ -123,6 +123,9 @@
 		stow
 		trash-cli
 		pciutils
+		openssl
+		qrencode
+		oathToolkit
 	];
 
 	# Hyprland
