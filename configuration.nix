@@ -122,6 +122,7 @@
 		wlsunset
 		stow
 		trash-cli
+		pciutils
 	];
 
 	# Hyprland
