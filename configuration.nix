@@ -40,7 +40,10 @@
 	networking = {
 		hostName = "xansaware"; # Define your hostname.
 		wireless.iwd.enable = true;  # Enables wireless support via iwd.
-		networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+		networkmanager = {
+			enable = true;  # Easiest to use and most distros use this by default.
+			wifi.backend = "iwd";
+		};
 	};
 
   # Set your time zone.
