@@ -88,6 +88,10 @@
 			createHome = true;
 			homeMode = "755";
 		};
+		guest = {
+			isNormalUser = true;
+			createHome = true;
+		};
 	};
 
 	# Enable Flakes
