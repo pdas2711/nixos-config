@@ -87,6 +87,7 @@
 		git = {
 			isNormalUser = true;
 			createHome = true;
+			home = "/srv/git";
 			homeMode = "755";
 		};
 		guest = {
