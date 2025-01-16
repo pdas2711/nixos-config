@@ -145,6 +145,7 @@
 		imv
 		rtorrent
 		openjdk
+		jq
 	];
 
 	# Hyprland
