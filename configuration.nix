@@ -75,13 +75,20 @@
 	# Default shell for all users
 	users.defaultUserShell = pkgs.zsh;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pdas2711 = {
-    	isNormalUser = true;
-    	extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-	createHome = true;
-	packages = with pkgs; [];
-  };
+	# Define a user account. Don't forget to set a password with ‘passwd’.
+	users.users = {
+		pdas2711 = {
+			isNormalUser = true;
+			extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+			createHome = true;
+			packages = with pkgs; [];
+		};
+		git = {
+			isNormalUser = true;
+			createHome = true;
+			homeMode = "755";
+		};
+	};
 
 	# Enable Flakes
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -190,6 +197,17 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 		};
 		oath.window = 30;
 	};
+
+	# Sudoers
+	security.sudo.extraRules = [
+		{
+			users = [ "ALL" ];
+			commands = [ {
+				command = "/home/git/add-user";
+				options = [ "NOPASSWD" ];
+			} ];
+		}
+	];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
