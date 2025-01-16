@@ -126,6 +126,11 @@
 		openssl
 		qrencode
 		oathToolkit
+		libreoffice
+		zathura
+		mpv
+		imv
+		rtorrent
 	];
 
 	# Hyprland
