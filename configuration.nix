@@ -76,6 +76,7 @@
 	users.defaultUserShell = pkgs.zsh;
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
+	users.mutableUsers = true;
 	users.users = {
 		pdas2711 = {
 			isNormalUser = true;
