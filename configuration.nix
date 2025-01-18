@@ -148,7 +148,9 @@
 		libreoffice
 		zathura
 		mpv
+		yt-dlp
 		imv
+		ffmpeg
 		rtorrent
 		openjdk
 		jq
