@@ -38,6 +38,11 @@
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
+	fileSystems."/mnt/jellyfin-media" = {
+		device = "/dev/disk/by-uuid/6145db61-3015-45bc-bbd0-475e6b2d85b8";
+		fsType = "btrfs";
+		options = [ "subvol=@" ];
+	};
 
   swapDevices = [ ];
 
