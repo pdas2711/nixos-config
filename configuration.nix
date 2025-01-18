@@ -113,6 +113,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 	environment.systemPackages = with pkgs; [
+		flatpak
 		neovim
 		tmux
 		wget
@@ -135,6 +136,7 @@
 		zoxide
 		zsh-syntax-highlighting
 		python3
+		pipx
 		ranger
 		wlsunset
 		stow
@@ -150,6 +152,8 @@
 		rtorrent
 		openjdk
 		jq
+		gimp
+		obs-studio
 	];
 
 	# Hyprland
