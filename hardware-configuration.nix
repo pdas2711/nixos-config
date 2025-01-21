@@ -50,13 +50,17 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-	networking.useDHCP = lib.mkDefault true;
+	#networking.useDHCP = lib.mkDefault true;
 	networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
-	networking.interfaces.enp6s0.ipv4.addresses = [ {
-		address = "169.168.1.1";
-		prefixLength = 30;
-	} ];
+	networking.interfaces.enp6s0 = {
+		useDHCP = false;
+		ipv4.addresses = [ {
+			address = "169.168.1.1";
+			prefixLength = 30;
+		} ];
+	};
 	networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
+	networking.networkmanager.unmanaged = [ "interface-name:enp6s0" ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
