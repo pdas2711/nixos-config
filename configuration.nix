@@ -156,6 +156,7 @@
 		jq
 		gimp
 		obs-studio
+		parted
 	];
 
 	# Hyprland
