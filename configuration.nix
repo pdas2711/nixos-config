@@ -10,31 +10,36 @@
       ./hardware-configuration.nix
     ];
 
-  # Use Grub for the bootloader.
-  	boot.loader = {
-		efi.canTouchEfiVariables = true;
-		grub = {
-			enable = true;
-			efiSupport = true;
-			device = "nodev";
-		};
-	};
-
-	boot.kernelParams = [ "ip=169.168.1.1::169.168.1.0:255.255.255.252::enp6s0:off" ];
-	boot.initrd = {
-		systemd.users.root.shell = "/bin/cryptsetup-askpass";
-		network = {
-			enable = true;
-			ssh = {
-				shell = "/bin/cryptsetup-askpass";
+	# Boot Configuration
+	boot = {
+		loader = {
+			efi.canTouchEfiVariables = true;
+			# Use Grub for the bootloader.
+			grub = {
 				enable = true;
-				port = 2222;
-				authorizedKeys = [
-					"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIHMTMLADSEtAhxuBzgzngIhx7LZfo5vfnTaPzyRhPBx root@xansaware"
-				];
-				hostKeys = [ "/etc/ssh/initrd/ssh_host_ed25519_key" ];
+				efiSupport = true;
+				device = "nodev";
 			};
 		};
+
+		kernelParams = [ "ip=169.168.1.1::169.168.1.0:255.255.255.252::enp6s0:off" ];
+		initrd = {
+			systemd.users.root.shell = "/bin/cryptsetup-askpass";
+			network = {
+				enable = true;
+				ssh = {
+					shell = "/bin/cryptsetup-askpass";
+					enable = true;
+					port = 2222;
+					authorizedKeys = [
+						"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIHMTMLADSEtAhxuBzgzngIhx7LZfo5vfnTaPzyRhPBx root@xansaware"
+					];
+					hostKeys = [ "/etc/ssh/initrd/ssh_host_ed25519_key" ];
+				};
+			};
+		};
+
+		binfmt.emulatedSystems = [ "aarch64-linux" ];
 	};
 
 	networking = {
