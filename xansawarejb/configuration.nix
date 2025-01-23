@@ -91,6 +91,8 @@
 		zoxide
 		zsh
 		veracrypt
+		wol
+		nmap
 	];
 
 	# Allowing Unfree Packages
