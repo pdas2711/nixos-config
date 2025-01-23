@@ -77,7 +77,7 @@ AllowTcpForwarding yes'';
 			{
 				groups = [ "wake" ];
 				commands = [ {
-					command = "/usr/bin/env wake";
+					command = "/run/current-system/sw/bin/wake";
 					options = [ "NOPASSWD" ];
 				} ];
 			}
