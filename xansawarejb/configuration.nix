@@ -65,9 +65,8 @@
 			PermitRootLogin = lib.mkDefault "no";
 			AuthenticationMethods = "publickey";
 		};
-		extraConfig = ''
-                        AllowTcpForwarding yes
-			Subsystem sftp internal-sftp
+		extraConfig = ''AllowTcpForwarding yes
+Subsystem sftp internal-sftp
                 '';
 	};
 
