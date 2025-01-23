@@ -109,7 +109,7 @@ AllowTcpForwarding yes'';
 		wol
 		nmap
 		jq
-		(import ./wake.nix)
+		(import ./wake.nix { inherit pkgs; })
 	];
 
 	# Allowing Unfree Packages
