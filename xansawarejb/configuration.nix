@@ -71,6 +71,20 @@
                 '';
 	};
 
+	# Sudoers
+	security.sudo = {
+		enable = true;
+		extraRules = [
+			{
+				groups = [ "wake" ];
+				commands = [ {
+					command = "/usr/local/bin/wake";
+					options = [ "NOPASSWD" ];
+				} ];
+			}
+		];
+	};
+
 	# Installing Packages
 	environment.systemPackages = with pkgs; [
 		libraspberrypi
