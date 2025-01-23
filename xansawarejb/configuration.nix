@@ -47,6 +47,7 @@
 
 	# User account definitions
 	users.mutableUsers = true;
+	users.groups.wake.members = [ "pdas2711" ];
 	users.users.pdas2711 = {
 		initialHashedPassword = "$6$f/je.OPO7cENlXH1$ISqeSsCLjN2EM0TdE9ruws6ZSJcKnhVrKxKVo6tn9ixOGk.glfmiZQaOJVx8/xAcgzm6nbyqFL72ZmUbFS89L.";  # Password is 'password' for initial SSH login. Change this immediately!
 		isNormalUser = true;
