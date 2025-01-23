@@ -110,6 +110,7 @@ AllowTcpForwarding yes'';
 		nmap
 		jq
 		(import ./wake.nix { inherit pkgs; })
+		qrencode
 	];
 
 	# Allowing Unfree Packages
