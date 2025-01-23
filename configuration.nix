@@ -33,7 +33,7 @@
 					port = 2222;
 					authorizedKeys = [
 						"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIHMTMLADSEtAhxuBzgzngIhx7LZfo5vfnTaPzyRhPBx root@xansaware"
-						"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII/s0aDfS4k9SW2780NJp7EpKu3GSoCArMrwj2TJkdqf root@xansawarejb"
+						"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPbTg0cEmjqNJd9rh2eEL4v4WVdIhsWTq19glZ8AnspK root@xansawarejb"
 					];
 					hostKeys = [ "/etc/ssh/initrd/ssh_host_ed25519_key" ];
 				};
