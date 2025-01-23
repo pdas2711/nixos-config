@@ -66,6 +66,7 @@
 		};
 		extraConfig = ''
                         AllowTcpForwarding yes
+			Subsystem sftp internal-sftp
                 '';
 	};
 
