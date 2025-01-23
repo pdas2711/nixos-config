@@ -66,7 +66,8 @@
 			AuthenticationMethods = "publickey";
 		};
 		sftpServerExecutable = "internal-sftp";
-		extraConfig = ''AllowTcpForwarding yes'';
+		extraConfig = ''Include sshd_config.d/*
+AllowTcpForwarding yes'';
 	};
 
 	# Sudoers
