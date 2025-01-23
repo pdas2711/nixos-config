@@ -1,5 +1,10 @@
 { pkgs }:
         pkgs.writeShellScriptBin "wake" ''
+if [[ ''${EUID} -ne 0 ]]; then
+        echo "Root privileges required."
+        exit
+fi
+
 hostname=$(${pkgs.jq}/bin/jq .hostname /etc/wake_config.json | sed 's/"//g')
 port=$(${pkgs.jq}/bin/jq .port /etc/wake_config.json)
 initrd_hostname=$(${pkgs.jq}/bin/jq .initrd_hostname /etc/wake_config.json | sed 's/"//g')
