@@ -162,6 +162,7 @@
 		gimp
 		obs-studio
 		parted
+		bemenu
 	];
 
 	# Hyprland
