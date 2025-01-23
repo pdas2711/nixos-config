@@ -108,6 +108,7 @@ AllowTcpForwarding yes'';
 		veracrypt
 		wol
 		nmap
+		jq
 	];
 
 	# Allowing Unfree Packages
