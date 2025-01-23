@@ -77,7 +77,7 @@ AllowTcpForwarding yes'';
 			{
 				groups = [ "wake" ];
 				commands = [ {
-					command = "/usr/local/bin/wake";
+					command = "/usr/bin/env wake";
 					options = [ "NOPASSWD" ];
 				} ];
 			}
@@ -109,6 +109,7 @@ AllowTcpForwarding yes'';
 		wol
 		nmap
 		jq
+		(import ./wake.nix)
 	];
 
 	# Allowing Unfree Packages
