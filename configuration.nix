@@ -164,6 +164,7 @@
 		obs-studio
 		parted
 		bemenu
+		glxinfo
 	];
 
 	# Hyprland
