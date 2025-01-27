@@ -167,6 +167,7 @@
 		glxinfo
 		zip
 		unzip
+		radicale
 	];
 
 	# Hyprland
@@ -177,6 +178,20 @@
 
 	# Enable Flatpak
 	services.flatpak.enable = true;
+
+	# Radicale
+	services.radicale = {
+		enable = true;
+		settings = {
+			server.hosts = [ "169.168.1.1:5232" "127.0.0.1:5232" ];
+			auth = {
+				type = "htpasswd";
+				htpasswd_filename = "/var/lib/radicale/users";
+				htpasswd_encryption = "bcrypt";
+			};
+			storage.filesystem_folder = "/var/lib/radicale/collections";
+		};
+	};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
