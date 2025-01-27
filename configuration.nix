@@ -165,6 +165,8 @@
 		parted
 		bemenu
 		glxinfo
+		zip
+		unzip
 	];
 
 	# Hyprland
