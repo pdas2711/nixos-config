@@ -201,6 +201,9 @@
   #   enableSSHSupport = true;
   # };
 
+	environment.etc.crypttab.text = ''backup_primary	/dev/disk/by-uuid/823f75c2-3c8b-4ebd-b20c-3ac86de1028f	/var/lib/private/luks_keys/backup_drive.key
+	'';
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
