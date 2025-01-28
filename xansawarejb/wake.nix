@@ -21,7 +21,7 @@ while true; do
                 exit
         elif [[ $(${pkgs.nmap}/bin/nmap -p ''${initrd_port} ''${initrd_hostname} | grep "''${initrd_port}/tcp" | awk '{print $2}') == "open" ]]; then
                 echo "The OS is partially booted. Unlocking..."
-                cat /srv/secrets/luks/luks.key | ${pkgs.openssh}/bin/ssh -p ''${initrd_port} -o IdentitiesOnly=yes -i ~/.ssh/init root@''${initrd_hostname}
+                cat /srv/secrets/luks/luks.key | ${pkgs.openssh}/bin/ssh -t -p ''${initrd_port} -o IdentitiesOnly=yes -i ~/.ssh/init root@''${initrd_hostname}
         else
                 sleep 5s
         fi
