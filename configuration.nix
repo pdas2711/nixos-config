@@ -198,7 +198,10 @@
 	};
 
 	services.logrotate.enable = true;
-	services.jellyfin.enable = true;
+	services.jellyfin = {
+		enable = true;
+		openFirewall = true;
+	};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
