@@ -168,6 +168,10 @@
 		zip
 		unzip
 		radicale
+		logrotate
+		jellyfin
+		jellyfin-web
+		jellyfin-ffmpeg
 	];
 
 	# Hyprland
@@ -192,6 +196,9 @@
 			storage.filesystem_folder = "/var/lib/radicale/collections";
 		};
 	};
+
+	services.logrotate.enable = true;
+	services.jellyfin.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
