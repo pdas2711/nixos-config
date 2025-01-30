@@ -172,6 +172,7 @@
 		jellyfin
 		jellyfin-web
 		jellyfin-ffmpeg
+		ntfy-sh
 	];
 
 	# Hyprland
@@ -201,6 +202,16 @@
 	services.jellyfin = {
 		enable = true;
 		openFirewall = true;
+	};
+
+	services.ntfy-sh = {
+		enable = true;
+		settings = {
+			base-url = "http://xansaware.ddns.net";
+			listen-http = ":7777";
+			auth-file = "/var/lib/ntfy-sh/user.db";
+			auth-default-access = "read-write";
+		};
 	};
 
   # Some programs need SUID wrappers, can be configured further or are
