@@ -279,11 +279,12 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 		}
 	];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+	# Open ports in the firewall.
+	networking.firewall = {
+		enable = true;
+		allowedTCPPorts = [ 7777 ];
+		allowedUDPPorts = [ ];
+	};
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
