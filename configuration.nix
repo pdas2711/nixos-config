@@ -173,6 +173,7 @@
 		jellyfin-web
 		jellyfin-ffmpeg
 		ntfy-sh
+		zig
 	];
 
 	# Hyprland
