@@ -38,10 +38,21 @@
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
+	
 	fileSystems."/mnt/jellyfin-media" = {
-		device = "/dev/disk/by-uuid/6145db61-3015-45bc-bbd0-475e6b2d85b8";
+		device = "/dev/mapper/jellyfin";
 		fsType = "btrfs";
 		options = [ "subvol=@" ];
+	};
+	
+	fileSystems."/mnt/backup_jellyfin" = {
+		device = "/dev/mapper/backup_jellyfin";
+		fsType = "btrfs";
+	};
+	
+	fileSystems."/mnt/backup_root" = {
+		device = "/dev/mapper/backup_root";
+		fsType = "btrfs";
 	};
 
   swapDevices = [ ];
