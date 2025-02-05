@@ -175,6 +175,7 @@
 		ntfy-sh
 		zig
 		pv
+		pandoc
 	];
 
 	# Hyprland
