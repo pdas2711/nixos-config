@@ -129,9 +129,26 @@ AllowTcpForwarding yes'';
 		enable = true;
 		syntaxHighlighting.enable = true;
 	};
+
 	environment.variables = {
 		SHELL = "zsh";
 		EDITOR = "neovim";
+	};
+
+	services.nginx = {
+                enable = true;
+                virtualHosts."xansaware.ddns.net" = {
+                        serverAliases = [ "xansawarejb.local" ];
+                        root = "/var/www";
+                };
+        };
+        systemd.services.nginx.serviceConfig.ReadWritePaths = [ "/var/spool/nginx/logs/" ];
+
+	# Open ports in the firewall.
+	networking.firewall = {
+		enable = true;
+		allowedTCPPorts = [ 80 ];
+		allowedUDPPorts = [ ];
 	};
 
 	# State Version. Don't change this!
