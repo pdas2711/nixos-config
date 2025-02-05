@@ -90,7 +90,7 @@
 	users.users = {
 		pdas2711 = {
 			isNormalUser = true;
-			extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+			extraGroups = [ "wheel" "libvirtd" ];
 			createHome = true;
 			packages = with pkgs; [];
 		};
@@ -289,6 +289,12 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 		allowedTCPPorts = [ 7777 ];
 		allowedUDPPorts = [ ];
 	};
+
+	# Virtualization/Hypervisor
+	programs.virt-manager.enable = true;
+	virtualisation.libvirtd.enable = true;
+	virtualisation.spiceUSBRedirection.enable = true;
+
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
