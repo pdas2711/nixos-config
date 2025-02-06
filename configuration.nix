@@ -287,7 +287,7 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	# Open ports in the firewall.
 	networking.firewall = {
 		enable = true;
-		allowedTCPPorts = [ 7777 ];
+		allowedTCPPorts = [ 7777 9418 ];
 		allowedUDPPorts = [ ];
 	};
 
@@ -295,6 +295,17 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	programs.virt-manager.enable = true;
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
+
+	systemd.services.git-daemon = {
+		wantedBy = [ "multi-user.target" ];
+		after = [ "network.target" ];
+		description = "Local Git Server";
+		serviceConfig = {
+			ExecStart = ''${pkgs.git}/bin/git daemon --reuseaddr --base-path=/srv/git/users --export-all'';
+			User = "git";
+			Restart = "always";
+		};
+	};
 
 
   # Copy the NixOS configuration file and link it from the resulting system
