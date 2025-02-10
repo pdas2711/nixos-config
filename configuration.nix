@@ -288,7 +288,7 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	networking.firewall = {
 		enable = true;
 		allowedTCPPorts = [ 7777 9418 ];
-		allowedUDPPorts = [ ];
+		allowedUDPPorts = [ 51820 ];
 	};
 
 	# Virtualization/Hypervisor
@@ -307,6 +307,20 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 		};
 	};
 
+	# Enable routing
+	boot.kernel.sysctl = {
+		"net.ipv4.conf.all.forwarding" = lib.mkDefault true;
+	        "net.ipv4.conf.default.forwarding" = lib.mkDefault true;
+	};
+	
+	# Enable NAT
+	networking.nat.enable = true;
+
+	# Wireguard Setup
+	networking.nat.externalInterface = "wlan0";
+	networking.nat.internalInterfaces = [ "wg0" ];
+	networking.wireguard.enable = true;
+	networking.wg-quick.interfaces.wg0.configFile = "/etc/wireguard/wg0.conf";
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
