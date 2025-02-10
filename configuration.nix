@@ -191,7 +191,7 @@
 	services.radicale = {
 		enable = true;
 		settings = {
-			server.hosts = [ "169.168.1.1:5232" "127.0.0.1:5232" ];
+			server.hosts = [ "0.0.0.0:5232" ];
 			auth = {
 				type = "htpasswd";
 				htpasswd_filename = "/var/lib/radicale/users";
@@ -287,7 +287,7 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	# Open ports in the firewall.
 	networking.firewall = {
 		enable = true;
-		allowedTCPPorts = [ 7777 9418 ];
+		allowedTCPPorts = [ 7777 9418 5232 ];
 		allowedUDPPorts = [ 51820 ];
 	};
 
