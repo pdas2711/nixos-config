@@ -94,12 +94,6 @@
 			createHome = true;
 			packages = with pkgs; [];
 		};
-		git = {
-			isNormalUser = true;
-			createHome = true;
-			home = "/srv/git";
-			homeMode = "755";
-		};
 		guest = {
 			isNormalUser = true;
 			createHome = true;
@@ -296,15 +290,10 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
 
-	systemd.services.git-daemon = {
-		wantedBy = [ "multi-user.target" ];
-		after = [ "network.target" ];
-		description = "Local Git Server";
-		serviceConfig = {
-			ExecStart = ''${pkgs.git}/bin/git daemon --reuseaddr --base-path=/srv/git/users --export-all'';
-			User = "git";
-			Restart = "always";
-		};
+	services.gitolite = {
+		enable = true;
+		user = "git";
+		adminPubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHDR1GQu+7CyqqzIFXHbeAExNxxkbhQuWJoeYLNsK55lXb0Eci7HQZphwLS9al6kdxy08mJD5xJe1PCZJmXWyqiuQGpQtvIpqO/S7nrPOhpxzD7aB0BZP5XYleDaOBsIch+JGk25C/HqJsOXGpxet80jpklTpMWJ0M+xfVfnUlVEa7HXsmLNB/CNTiSNuDYTjuzjdjgwdJaBocaycdMwEHU+8yqU3C3gVNqjd37EHskpfTLsp10HtrnvbTf064LXVskrB8IHNVF8o80NnGidzLEftCCfnfDbByDvC+fET6vDq0J5WR4glP8MZutOEVSBXaBI813GNj2U8K+Ap+qeQDv4+1FqIH1OedRXaNUgziOzb7YG+nlXmQRYYBo+88qazhw2pV2VoGIzpjCfwQBEi5dERw3eFwuFHIzTe9DeDijTCYjLYn2W3/KEz8RQpCR1mIILlqBcAdAkNMLDll2RFLcoKOsnNDY///ZKtsl0AqaJpjR/33kfhFGu4aRTGxeXa/7q+Vkm7pRTFIK3KR6YJtowlSaVNttJh0wDvw3rH77JV1apu81VD5WF1kqVk9i/OSPzE1WQU3LlN/Xrw59p7Mhx4b1A0BAxUyQRbcYGa0J3oZL7Q+CoA9Pkpn0BRAbppRK61TtaPP7oV8YwBBzoliWB5/X7xWFTJeSAPojSDBLQ== openpgp:0xCF57ED6B";
 	};
 
 	# Enable routing
