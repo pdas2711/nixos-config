@@ -152,6 +152,7 @@
 		yt-dlp
 		imv
 		ffmpeg
+		flac
 		rtorrent
 		openjdk
 		jq
