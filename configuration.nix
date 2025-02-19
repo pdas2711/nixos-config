@@ -113,6 +113,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 	environment.systemPackages = with pkgs; [
+		fastfetch
 		flatpak
 		neovim
 		tmux
@@ -170,6 +171,7 @@
 		zig
 		pv
 		pandoc
+		brave
 	];
 
 	# Hyprland
