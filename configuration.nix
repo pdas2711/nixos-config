@@ -172,6 +172,7 @@
 		pv
 		pandoc
 		brave
+		imagemagick
 	];
 
 	# Hyprland
