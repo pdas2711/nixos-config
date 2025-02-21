@@ -175,6 +175,7 @@
 		brave
 		imagemagick
 		pwgen
+		nginx
 	];
 
 	# Hyprland
@@ -213,6 +214,13 @@
 			listen-http = ":7777";
 			auth-file = "/var/lib/ntfy-sh/user.db";
 			auth-default-access = "read-write";
+		};
+	};
+
+	services.nginx = {
+		enable = true;
+		virtualHosts = {
+			"localhost".root = "/var/www";
 		};
 	};
 
@@ -286,7 +294,7 @@ session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib
 	# Open ports in the firewall.
 	networking.firewall = {
 		enable = true;
-		allowedTCPPorts = [ 7777 9418 5232 ];
+		allowedTCPPorts = [ 7777 9418 5232 80 ];
 		allowedUDPPorts = [ 51820 ];
 	};
 
