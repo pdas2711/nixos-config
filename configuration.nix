@@ -174,6 +174,7 @@
 		pandoc
 		brave
 		imagemagick
+		pwgen
 	];
 
 	# Hyprland
