@@ -99,6 +99,7 @@
 			createHome = true;
 		};
 	};
+	users.groups.ignoreoath.members = [ "git" ];
 
 	# Enable Flakes
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -266,6 +267,7 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 account required ${pkgs.linux-pam}/lib/security/pam_unix.so # unix (order 10900)
 
 # Authentication management.
+auth [success=done default=ignore] ${pkgs.linux-pam}/lib/security/pam_succeed_if.so user ingroup ignoreoath  # Ignore OATH for users in this group
 auth required ${pkgs.oathToolkit}/lib/security/pam_oath.so digits=6 usersfile=/etc/users.oath window=30 # oath (order 11100)
 
 # Password management.
