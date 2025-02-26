@@ -176,6 +176,8 @@
 		imagemagick
 		pwgen
 		nginx
+		php
+		sqlite
 	];
 
 	# Hyprland
