@@ -263,20 +263,20 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 			oathAuth = true;
 			setLoginUid = true;
 			text = ''# Account management.
-account required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_unix.so # unix (order 10900)
+account required ${pkgs.linux-pam}/lib/security/pam_unix.so # unix (order 10900)
 
 # Authentication management.
-auth required /nix/store/0fri5mlc1zmf8lfiskvz0ramny51vaq6-oath-toolkit-2.6.12/lib/security/pam_oath.so digits=6 usersfile=/etc/users.oath window=30 # oath (order 11100)
+auth required ${pkgs.oathToolkit}/lib/security/pam_oath.so digits=6 usersfile=/etc/users.oath window=30 # oath (order 11100)
 
 # Password management.
-password sufficient /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_unix.so nullok yescrypt # unix (order 10200)
+password sufficient ${pkgs.linux-pam}/lib/security/pam_unix.so nullok yescrypt # unix (order 10200)
 
 # Session management.
-session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_env.so conffile=/etc/pam/environment readenv=0 # env (order 10100)
-session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_unix.so # unix (order 10200)
-session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_loginuid.so # loginuid (order 10300)
-session optional /nix/store/bl5dgjbbr9y4wpdw6k959mkq4ig0jwyg-systemd-256.10/lib/security/pam_systemd.so # systemd (order 12000)
-session required /nix/store/sl3fa5zh61xxl03m64if2wqzbvrb6zly-linux-pam-1.6.1/lib/security/pam_limits.so conf=/nix/store/mibdlp1bmk4wl2qjk77i6fl1dg4kq6k6-limits.conf # limits (order 12200)
+session required ${pkgs.linux-pam}/lib/security/pam_env.so conffile=/etc/pam/environment readenv=0 # env (order 10100)
+session required ${pkgs.linux-pam}/lib/security/pam_unix.so # unix (order 10200)
+session required ${pkgs.linux-pam}/lib/security/pam_loginuid.so # loginuid (order 10300)
+session optional ${pkgs.systemd}/lib/security/pam_systemd.so # systemd (order 12000)
+session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=/nix/store/mibdlp1bmk4wl2qjk77i6fl1dg4kq6k6-limits.conf # limits (order 12200)
 			'';
 		};
 		oath.window = 30;
