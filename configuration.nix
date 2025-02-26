@@ -278,7 +278,7 @@ session required ${pkgs.linux-pam}/lib/security/pam_env.so conffile=/etc/pam/env
 session required ${pkgs.linux-pam}/lib/security/pam_unix.so # unix (order 10200)
 session required ${pkgs.linux-pam}/lib/security/pam_loginuid.so # loginuid (order 10300)
 session optional ${pkgs.systemd}/lib/security/pam_systemd.so # systemd (order 12000)
-session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=/nix/store/mibdlp1bmk4wl2qjk77i6fl1dg4kq6k6-limits.conf # limits (order 12200)
+session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-pam}/etc/security/limits.conf # limits (order 12200)
 			'';
 		};
 		oath.window = 30;
