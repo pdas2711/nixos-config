@@ -310,7 +310,8 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	services.gitolite = {
 		enable = true;
 		user = "git";
-		adminPubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHDR1GQu+7CyqqzIFXHbeAExNxxkbhQuWJoeYLNsK55lXb0Eci7HQZphwLS9al6kdxy08mJD5xJe1PCZJmXWyqiuQGpQtvIpqO/S7nrPOhpxzD7aB0BZP5XYleDaOBsIch+JGk25C/HqJsOXGpxet80jpklTpMWJ0M+xfVfnUlVEa7HXsmLNB/CNTiSNuDYTjuzjdjgwdJaBocaycdMwEHU+8yqU3C3gVNqjd37EHskpfTLsp10HtrnvbTf064LXVskrB8IHNVF8o80NnGidzLEftCCfnfDbByDvC+fET6vDq0J5WR4glP8MZutOEVSBXaBI813GNj2U8K+Ap+qeQDv4+1FqIH1OedRXaNUgziOzb7YG+nlXmQRYYBo+88qazhw2pV2VoGIzpjCfwQBEi5dERw3eFwuFHIzTe9DeDijTCYjLYn2W3/KEz8RQpCR1mIILlqBcAdAkNMLDll2RFLcoKOsnNDY///ZKtsl0AqaJpjR/33kfhFGu4aRTGxeXa/7q+Vkm7pRTFIK3KR6YJtowlSaVNttJh0wDvw3rH77JV1apu81VD5WF1kqVk9i/OSPzE1WQU3LlN/Xrw59p7Mhx4b1A0BAxUyQRbcYGa0J3oZL7Q+CoA9Pkpn0BRAbppRK61TtaPP7oV8YwBBzoliWB5/X7xWFTJeSAPojSDBLQ== openpgp:0xCF57ED6B";
+		group = "git";
+		adminPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLLAUut2bt+eHu+Kqt6xjzZp98JMxx89bzKIFInP1tZ pdas2711@xansaware";
 	};
 
 	# Enable routing
