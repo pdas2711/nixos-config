@@ -179,6 +179,7 @@
 		nginx
 		php
 		sqlite
+		texlive.combined.scheme-medium
 	];
 
 	# Hyprland
