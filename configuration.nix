@@ -94,6 +94,13 @@
 			createHome = true;
 			packages = with pkgs; [];
 		};
+		git = {
+			isNormalUser = true;
+			createHome = true;
+			home = "/srv/git";
+			homeMode = "755";
+			shell = "${pkgs.git}/bin/git-shell";
+		};
 		guest = {
 			isNormalUser = true;
 			createHome = true;
@@ -308,11 +315,15 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
 
-	services.gitolite = {
-		enable = true;
-		user = "git";
-		group = "git";
-		adminPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLLAUut2bt+eHu+Kqt6xjzZp98JMxx89bzKIFInP1tZ pdas2711@xansaware";
+	systemd.services.git-daemon = {
+		wantedBy = [ "multi-user.target" ];
+		after = [ "network.target" ];
+		description = "Local Git Server";
+		serviceConfig = {
+			ExecStart = ''${pkgs.git}/bin/git daemon --reuseaddr --base-path=/srv/git/users --export-all'';
+			User = "git";
+			Restart = "always";
+		};
 	};
 
 	# Enable routing
