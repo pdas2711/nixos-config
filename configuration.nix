@@ -187,6 +187,8 @@
 		php
 		sqlite
 		texlive.combined.scheme-medium
+		(import ./power-timer.nix { inherit pkgs; })
+
 	];
 
 	# Hyprland
