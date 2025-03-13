@@ -107,6 +107,7 @@
 		};
 	};
 	users.groups.ignoreoath.members = [ "git" ];
+	users.groups.power-timer.members = [ "pdas2711" ];
 
 	# Enable Flakes
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -300,6 +301,13 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 			users = [ "ALL" ];
 			commands = [ {
 				command = "/home/git/add-user";
+				options = [ "NOPASSWD" ];
+			} ];
+		}
+		{
+			groups = [ "power-timer" ];
+			commands = [ {
+				command = "/run/current-system/sw/bin/power-timer";
 				options = [ "NOPASSWD" ];
 			} ];
 		}
