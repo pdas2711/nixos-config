@@ -33,7 +33,7 @@ echo "Current time: $(date +"%T")"
 echo "Timer started."
 ${pkgs.coreutils}/bin/sleep ''${sleeptime}m
 
-${pkgs.curl}/bin/curl -u ''${username}:''${password} -d "5 minutes remaining before machine powers off." "''${server}"
+${pkgs.curl}/bin/curl -u ''${username}:''${password} -d "5 minutes remaining before the system powers off." "''${server}"
 ${pkgs.coreutils}/bin/sleep 5m
 
 if [[ "''${1}" == "poweroff" ]]; then
