@@ -188,6 +188,8 @@
 		php
 		sqlite
 		texlive.combined.scheme-medium
+		file
+		ncdu
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
