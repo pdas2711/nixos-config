@@ -119,8 +119,15 @@
 		syntaxHighlighting.enable = true;
 	};
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+	# Steam
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
+	};
+
+	# List packages installed in system profile. To search, run:
+	# $ nix search wget
 	environment.systemPackages = with pkgs; [
 		fastfetch
 		flatpak
@@ -194,6 +201,12 @@
 		(import ./start-hyprland.nix { inherit pkgs; })
 
 	];
+	
+	# Allowing Unfree Packages
+	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "steam"
+	     "steam-unwrapped"
+        ];
 
 	# Hyprland
 	programs.hyprland = {
