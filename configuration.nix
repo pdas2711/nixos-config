@@ -126,6 +126,17 @@
 		dedicatedServer.openFirewall = true;
 	};
 
+	# UWSM
+	programs.uwsm = {
+		enable = true;
+		waylandCompositors = {
+			hyprland = {
+				prettyName = "Hyprland";
+				binPath = "/run/current-system/sw/bin/Hyprland";
+			};
+		};
+	};
+
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
