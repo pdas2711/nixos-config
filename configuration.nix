@@ -209,6 +209,7 @@
 		file
 		ncdu
 		htop
+		jellycli
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
