@@ -24,6 +24,10 @@
 					./xansawarejb/configuration.nix
 				];
 			};
+			xansaserver = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [ ./xansaspire/configuration.nix ];
+			};
 		};
 	};
 }
