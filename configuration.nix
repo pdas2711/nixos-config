@@ -330,7 +330,7 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 		{
 			users = [ "ALL" ];
 			commands = [ {
-				command = "/home/git/add-user";
+				command = "/srv/git/add-user";
 				options = [ "NOPASSWD" ];
 			} ];
 		}
