@@ -125,6 +125,9 @@ AllowTcpForwarding yes'';
 		experimental-features = [ "nix-command" "flakes" ];
 	};
 
+	# Increased download buffer size
+	nix.settings.download-buffer-size = 524288000;
+
 	programs.zsh = {
 		enable = true;
 		syntaxHighlighting.enable = true;

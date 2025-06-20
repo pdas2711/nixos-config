@@ -112,6 +112,9 @@
 	# Enable Flakes
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	# Increased download buffer size
+	nix.settings.download-buffer-size = 524288000;
+
 	# Enabling applications
 	programs.firefox.enable = true;
 	programs.zsh = {
