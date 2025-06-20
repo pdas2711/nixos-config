@@ -5,6 +5,11 @@ if [[ ''${EUID} -ne 0 ]]; then
         exit
 fi
 
+if [[ ! -d "/srv/secrets/luks" ]]; then
+	echo "LUKS key not found. Terminating."
+	exit
+fi
+
 hostname=$(${pkgs.jq}/bin/jq .hostname /etc/wake_config.json | sed 's/"//g')
 port=$(${pkgs.jq}/bin/jq .port /etc/wake_config.json)
 initrd_hostname=$(${pkgs.jq}/bin/jq .initrd_hostname /etc/wake_config.json | sed 's/"//g')
