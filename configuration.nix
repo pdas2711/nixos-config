@@ -137,6 +137,15 @@
 		};
 	};
 
+	# Git Config
+	programs.git = {
+		enable = true;
+		config = {
+			init.defaultBranch = "main";
+			safe.directory = "/srv/git/users/*";
+		};
+	};
+
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
