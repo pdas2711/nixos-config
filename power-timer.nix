@@ -57,9 +57,13 @@ fi
 echo "5 minutes remaining before the system powers off."
 ${pkgs.coreutils}/bin/sleep 5m
 
-if [[ "''${poweropt}" == "poweroff" ]]; then
-	systemctl poweroff
-elif [[ "''${poweropt}" == "suspend" ]]; then
-	systemctl suspend
+if [[ "$(who | grep -v "''${SUDO_USER}")" != "" ]]; then
+	echo "Other users are logged in. Aborting."
+else
+	if [[ "''${poweropt}" == "poweroff" ]]; then
+		systemctl poweroff
+	elif [[ "''${poweropt}" == "suspend" ]]; then
+		systemctl suspend
+	fi
 fi
 ''
