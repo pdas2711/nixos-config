@@ -5,21 +5,39 @@ if [[ ''${EUID} -ne 0 ]]; then
 	exit
 fi
 
-config_dir="/home/''${SUDO_USER}/.config/power-timer/config.json"
-username=$(${pkgs.jq}/bin/jq .username "''${config_dir}" | sed 's/"//g')
-password=$(${pkgs.jq}/bin/jq .password "''${config_dir}" | sed 's/"//g')
-server=$(${pkgs.jq}/bin/jq .server "''${config_dir}" | sed 's/"//g')
+for (( i=1; i<="$#"; i++ )); do
+	if [[ "''${!i}" == "--no-notifications" ]]; then
+		allow_notif="false"
+	elif [[ -z "''${poweropt}" ]]; then
+		poweropt="''${!i}"
+	else
+		timermin="''${!i}"
+	fi
+done
 
-if [[ "''${1}" != "poweroff" ]] && [[ "''${1}" != "suspend" ]]; then
-	echo "Unknown argument."
+if [[ "''${allow_notif}" != "false" ]]; then
+	config_dir="/home/''${SUDO_USER}/.config/power-timer/config.json"
+	username=$(${pkgs.jq}/bin/jq .username "''${config_dir}" | sed 's/"//g')
+	password=$(${pkgs.jq}/bin/jq .password "''${config_dir}" | sed 's/"//g')
+	server=$(${pkgs.jq}/bin/jq .server "''${config_dir}" | sed 's/"//g')
+fi
+
+if [[ -z "''${poweropt}" ]]; then
+	echo
+	echo "1. Suspend"
+	echo "2. Poweroff"
+	echo
+	read -p "Choose power option: " poweropt
+elif [[ "''${poweropt}" != "poweroff" ]] && [[ "''${poweropt}" != "suspend" ]]; then
+	echo "Unknown argument ''${poweropt}."
 	exit
 fi
 
-if [[ -z "''${2}" ]]; then
+if [[ -z "''${timermin}" ]]; then
 	echo "Enter the number of minutes for the timer to start before the machine powers off."
 	read -p "Amount: " timermin
 else
-	timermin="''${2}"
+	timermin="''${timermin}"
 fi
 
 if [[ ''${timermin} -le 5 ]]; then
@@ -33,12 +51,15 @@ echo "Current time: $(date +"%T")"
 echo "Timer started."
 ${pkgs.coreutils}/bin/sleep ''${sleeptime}m
 
-${pkgs.curl}/bin/curl -u ''${username}:''${password} -d "5 minutes remaining before the system powers off." "''${server}"
+if [[ "''${allow_notif}" != "false" ]]; then
+	${pkgs.curl}/bin/curl -u ''${username}:''${password} -d "5 minutes remaining before the system powers off." "''${server}"
+fi
+echo "5 minutes remaining before the system powers off."
 ${pkgs.coreutils}/bin/sleep 5m
 
-if [[ "''${1}" == "poweroff" ]]; then
+if [[ "''${poweropt}" == "poweroff" ]]; then
 	systemctl poweroff
-elif [[ "''${1}" == "suspend" ]]; then
+elif [[ "''${poweropt}" == "suspend" ]]; then
 	systemctl suspend
 fi
 ''
