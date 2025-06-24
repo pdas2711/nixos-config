@@ -16,7 +16,7 @@ for (( i=1; i<="$#"; i++ )); do
 done
 
 if [[ "''${allow_notif}" != "false" ]]; then
-	if [[ ! -f ''${SUDO_USER}/.config/power-timer/config.json ]]; then
+	if [[ ! -f "/home/''${SUDO_USER}/.config/power-timer/config.json" ]]; then
 		echo "'~/.config/power-timer/config.json' not found. Pass '--no-notifications' as an argument to omit the notification functionality."
 		exit
 	fi
