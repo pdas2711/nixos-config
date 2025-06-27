@@ -222,6 +222,8 @@
 		ncdu
 		htop
 		jellycli
+		libcaca
+		libsixel
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
