@@ -128,9 +128,6 @@
 		ncdu
 		htop
 	];
-
-	# Enable XDG Desktop Portals
-	xdg.portal.enable = true;
 	
 	# Allowing Unfree Packages
 	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [];
