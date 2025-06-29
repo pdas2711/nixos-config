@@ -14,27 +14,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "";
+    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."root".device = "";
+  boot.initrd.luks.devices."root".device = "3553337a-b7b9-4b97-b72f-03bc8d660820";
 
   fileSystems."/boot" =
-    { device = "";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+    { device = "BEDE-6B2C";
+      fsType = "fat32";
     };
 
   fileSystems."/var" =
-    { device = "";
+    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@var" ];
     };
 
   fileSystems."/home" =
-    { device = "";
+    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
