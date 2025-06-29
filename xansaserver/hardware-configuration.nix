@@ -23,7 +23,8 @@
 
   fileSystems."/boot" =
     { device = "BEDE-6B2C";
-      fsType = "fat32";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/var" =
