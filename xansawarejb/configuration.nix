@@ -111,6 +111,7 @@ AllowTcpForwarding yes'';
 		jq
 		(import ./wake.nix { inherit pkgs; })
 		qrencode
+		python3
 	];
 
 	# Allowing Unfree Packages
@@ -152,6 +153,17 @@ AllowTcpForwarding yes'';
 		enable = true;
 		allowedTCPPorts = [ 80 ];
 		allowedUDPPorts = [ ];
+	};
+	
+	systemd.services.noipduc = {
+		wantedBy = [ "multi-user.target" ];
+		after = [ "network.target" ];
+		description = "NoIP DUC in Python";
+		serviceConfig = {
+			WorkingDirectory = "/opt/noip_duc_python";
+			ExecStart = ''/opt/noip_duc_python/update-noip.py'';
+			Restart = "always";
+		};
 	};
 
 	# State Version. Don't change this!
