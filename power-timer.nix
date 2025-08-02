@@ -32,6 +32,14 @@ if [[ -z "''${poweropt}" ]]; then
 	echo "2. Poweroff"
 	echo
 	read -p "Choose power option: " poweropt
+	if [[ "''${poweropt}" == "1" ]]; then
+		poweropt="suspend"
+	elif [[ "''${poweropt}" == "2" ]]; then
+		poweropt="poweroff"
+	else
+		echo "Incorrect option."
+		exit
+	fi
 elif [[ "''${poweropt}" != "poweroff" ]] && [[ "''${poweropt}" != "suspend" ]]; then
 	echo "Unknown argument ''${poweropt}."
 	exit
