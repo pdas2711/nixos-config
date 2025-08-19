@@ -224,6 +224,8 @@
 		jellycli
 		libcaca
 		libsixel
+		cargo
+		rustc
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
