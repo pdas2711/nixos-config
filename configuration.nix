@@ -227,6 +227,7 @@
 		cargo
 		rustc
 		gcc
+		nbd
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
