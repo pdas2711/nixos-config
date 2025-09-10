@@ -2,9 +2,14 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, pkgsUnstable, ... }:
+{ config, inputs, lib, pkgs, pkgsUnstable, ... }:
 
 {
+	 _module.args.pkgsUnstable = import inputs.nixpkgsUnstable {
+	 	inherit (pkgs.stdenv.hostPlatform) system;
+	 	inherit (config.nixpkgs) config;
+	 };
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -228,6 +233,7 @@
 		rustc
 		gcc
 		nbd
+		filebrowser
 		(import ./power-timer.nix { inherit pkgs; })
 		(import ./start-hyprland.nix { inherit pkgs; })
 
@@ -364,7 +370,13 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	# Open ports in the firewall.
 	networking.firewall = {
 		enable = true;
-		allowedTCPPorts = [ 7777 9418 5232 80 ];
+		allowedTCPPorts = [
+			7777
+			9418
+			5232
+			80
+			8080  # Filebrowser
+		];
 		allowedUDPPorts = [ 51820 ];
 	};
 
@@ -373,14 +385,26 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
 
-	systemd.services.git-daemon = {
-		wantedBy = [ "multi-user.target" ];
-		after = [ "network.target" ];
-		description = "Local Git Server";
-		serviceConfig = {
-			ExecStart = ''${pkgs.git}/bin/git daemon --reuseaddr --base-path=/srv/git/users --export-all'';
-			User = "git";
-			Restart = "always";
+	systemd.services = {
+		git-daemon = {
+			wantedBy = [ "multi-user.target" ];
+			after = [ "network.target" ];
+			description = "Local Git Server";
+			serviceConfig = {
+				ExecStart = ''${pkgs.git}/bin/git daemon --reuseaddr --base-path=/srv/git/users --export-all'';
+				User = "git";
+				Restart = "always";
+			};
+		};
+		filebrowser = {
+			wantedBy = [ "multi-user.target" ];
+			after = [ "network.target" ];
+			description = "Web-based File Browser";
+			serviceConfig = {
+				ExecStart = "${pkgs.filebrowser}/bin/filebrowser --database /var/lib/filebrowser/filebrowser.db --address 0.0.0.0 --port 8080";
+				User = "root";
+				Restart = "always";
+			};
 		};
 	};
 
