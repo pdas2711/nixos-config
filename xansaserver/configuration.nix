@@ -159,10 +159,7 @@
 		settings = {
 			PasswordAuthentication = false;
 			PermitRootLogin = "no";
-			KbdInteractiveAuthentication = true;
-			AuthenticationMethods = "publickey,keyboard-interactive:pam";
-			ChallengeResponseAuthentication = true;
-			UsePAM = true;
+			AuthenticationMethods = "publickey";
 		};
 		extraConfig = ''
 			AllowTcpForwarding yes
