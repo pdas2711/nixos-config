@@ -14,27 +14,27 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
+    { device = "/dev/disk/by-uuid/83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."root".device = "3553337a-b7b9-4b97-b72f-03bc8d660820";
+  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/3553337a-b7b9-4b97-b72f-03bc8d660820";
 
   fileSystems."/boot" =
-    { device = "BEDE-6B2C";
+    { device = "/dev/disk/by-uuid/F17D-09B2";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/var" =
-    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
+    { device = "/dev/disk/by-uuid/83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@var" ];
     };
 
   fileSystems."/home" =
-    { device = "83903e6b-e486-4510-9e84-91db757e4ad0";
+    { device = "/dev/disk/by-uuid/83903e6b-e486-4510-9e84-91db757e4ad0";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
