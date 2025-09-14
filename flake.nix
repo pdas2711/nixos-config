@@ -24,6 +24,13 @@
 					./xansawarejb/configuration.nix
 				];
 			};
+			xansaserver = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				specialArgs = {
+					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
+				};
+				modules = [ ./xansaserver/configuration.nix ];
+			};
 		};
 	};
 }
