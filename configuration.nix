@@ -177,6 +177,7 @@
 		wl-clipboard
 		(pass.withExtensions (exts: [ exts.pass-otp ]))
 		pass
+		gopass
 		pavucontrol
 		zoxide
 		zsh-syntax-highlighting
