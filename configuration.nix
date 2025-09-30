@@ -302,10 +302,14 @@
   #   enableSSHSupport = true;
   # };
 
-	environment.etc.crypttab.text = ''backup_root	/dev/disk/by-uuid/823f75c2-3c8b-4ebd-b20c-3ac86de1028f	/var/lib/private/luks_keys/backup_drive.key
+	environment.etc = {
+		crypttab.text = ''backup_root	/dev/disk/by-uuid/823f75c2-3c8b-4ebd-b20c-3ac86de1028f	/var/lib/private/luks_keys/backup_drive.key
 jellyfin	/dev/disk/by-uuid/9b514292-923a-4852-8556-2bb9c77346d9	/var/lib/private/luks_keys/jellyfin.key
 backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/private/luks_keys/jellyfin.key
-	'';
+		'';
+		environment.text = ''export EDITOR=nvim
+		'';
+	};
 
   # List services that you want to enable:
 
