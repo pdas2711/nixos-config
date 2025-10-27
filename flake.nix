@@ -14,7 +14,7 @@
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
-				modules = [ ./configuration.nix ];
+				modules = [ ./xansaware/configuration.nix ];
 			};
 			xansawarejb = nixpkgs.lib.nixosSystem {
 				system = "aarch64-linux";
