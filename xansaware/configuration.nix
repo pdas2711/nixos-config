@@ -5,11 +5,6 @@
 { config, inputs, lib, pkgs, pkgsUnstable, ... }:
 
 {
-	 _module.args.pkgsUnstable = import inputs.nixpkgsUnstable {
-	 	inherit (pkgs.stdenv.hostPlatform) system;
-	 	inherit (config.nixpkgs) config;
-	 };
-
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
