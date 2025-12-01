@@ -445,7 +445,7 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	networking.nat.enable = true;
 
 	# Wireguard Setup
-	networking.nat.externalInterface = "wlan0";
+	networking.nat.externalInterface = "enp5s0";
 	networking.nat.internalInterfaces = [ "wg0" ];
 	networking.wireguard.enable = true;
 	networking.wg-quick.interfaces.wg0.configFile = "/etc/wireguard/wg0.conf";
