@@ -444,6 +444,9 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	# Enable NAT
 	networking.nat.enable = true;
 
+	# Enable NFTables
+	networking.nftables.enable = true;
+
 	# Wireguard Setup
 	networking.nat.externalInterface = "enp5s0";
 	networking.nat.internalInterfaces = [ "wg0" ];
