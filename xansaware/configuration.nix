@@ -154,6 +154,9 @@
 		};
 	};
 
+	# Set Neovim as the default editor
+	programs.neovim.defaultEditor = true;
+
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
@@ -330,6 +333,10 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 		'';
 		environment.text = ''export EDITOR=nvim
 		'';
+	};
+
+	environment.variables = {
+		SUDO_EDITOR = "nvim";  # Default editor when using sudo
 	};
 
   # List services that you want to enable:
