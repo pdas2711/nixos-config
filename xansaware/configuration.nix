@@ -418,6 +418,7 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	programs.virt-manager.enable = true;
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
+	networking.firewall.trustedInterfaces = [ "virbr0" ];
 
 	systemd.services = {
 		git-daemon = {
