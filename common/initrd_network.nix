@@ -1,7 +1,6 @@
 { ... }: {
 	# Enable networking in initrd when unlocking LUKS root
 	boot.initrd = {
-		systemd.users.root.shell = "/bin/cryptsetup-askpass";
 		network = {
 			enable = true;
 			ssh = {
