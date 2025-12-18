@@ -36,4 +36,7 @@
 	environment.variables = {
 		SUDO_EDITOR = "nvim";  # Default editor when using sudo
 	};
+
+	# Enable sudo
+	security.sudo.enable = true;
 }
