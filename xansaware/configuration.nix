@@ -149,6 +149,9 @@
 		};
 	};
 
+	# Set Neovim as the default editor
+	programs.neovim.defaultEditor = true;
+
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
@@ -327,6 +330,10 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 		'';
 	};
 
+	environment.variables = {
+		SUDO_EDITOR = "nvim";  # Default editor when using sudo
+	};
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -406,6 +413,7 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	programs.virt-manager.enable = true;
 	virtualisation.libvirtd.enable = true;
 	virtualisation.spiceUSBRedirection.enable = true;
+	networking.firewall.trustedInterfaces = [ "virbr0" ];
 
 	systemd.services = {
 		git-daemon = {
@@ -439,8 +447,11 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 	# Enable NAT
 	networking.nat.enable = true;
 
+	# Enable NFTables
+	networking.nftables.enable = true;
+
 	# Wireguard Setup
-	networking.nat.externalInterface = "wlan0";
+	networking.nat.externalInterface = "enp5s0";
 	networking.nat.internalInterfaces = [ "wg0" ];
 	networking.wireguard.enable = true;
 	networking.wg-quick.interfaces.wg0.configFile = "/etc/wireguard/wg0.conf";
