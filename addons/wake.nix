@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }: {
         pkgs.writeShellScriptBin "wake" ''
 if [[ ''${EUID} -ne 0 ]]; then
         echo "Root privileges required."
@@ -31,4 +31,19 @@ while true; do
                 sleep 5s
         fi
 done
-''
+'';
+
+	# Group creation for wake
+	users.groups.wake = {};
+
+	# Sudoers rule to run wake script without password for wake group
+	security.sudo.extraRules = [
+		{
+			groups = [ "wake" ];
+			commands = [ {
+				command = "/run/current-system/sw/bin/wake";
+				options = [ "NOPASSWD" ];
+			} ];
+		}
+	];
+}

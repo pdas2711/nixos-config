@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }: {
 	pkgs.writeShellScriptBin "power-timer" ''
 if [[ ''${EUID} -ne 0 ]]; then
 	echo "Please run as root."
@@ -78,4 +78,19 @@ else
 		systemctl suspend
 	fi
 fi
-''
+'';
+
+	# Group creation for power-timer
+	users.groups.power-timer = {};
+
+	# Sudoers rule to run without a password for power-timer group
+	security.sudo.extraRules = [
+		{
+			groups = [ "power-timer" ];
+			commands = [ {
+				command = "/run/current-system/sw/bin/power-timer";
+				options = [ "NOPASSWD" ];
+			} ];
+		}
+	];
+}
