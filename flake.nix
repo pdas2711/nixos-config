@@ -31,6 +31,13 @@
 				};
 				modules = [ ./xansaserver/configuration.nix ];
 			};
+			xansago = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				specialArgs = {
+					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
+				};
+				modules = [ ./hosts/xansago/configuration.nix ];
+			};
 		};
 	};
 }
