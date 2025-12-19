@@ -14,7 +14,7 @@
 	];
 
 	# Hostname
-	networking.hostname = "xansago";
+	networking.hostName = "xansago";
 
 	# Enable touchpad support
 	services.libinput.enable = true;
