@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
 	# NetworkManager
 	networking.networkmanager.enable = true;
 
