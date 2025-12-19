@@ -3,7 +3,7 @@
 	imports = [ ../../common/default_mounts.nix ];
 
 	# LUKS root device target
-	boot.initrd.luks.devices."root".device = "adde90b1-12c2-4d2d-ba77-c36bb83ce50f";
+	boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/adde90b1-12c2-4d2d-ba77-c36bb83ce50f";
 
 	# Filesystem for boot device
 	fileSystems."/boot" = {
