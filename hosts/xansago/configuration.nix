@@ -10,6 +10,7 @@
 		../../common/wireless.nix
 		../../common/bluetooth.nix
 		../../common/wireguard.nix
+		../../addons/power_timer.nix
 		./filesystems.nix
 	];
 
@@ -27,11 +28,6 @@
 			createHome = true;
 		};
 	};
-
-	# Add power-timer script
-	environment.systemPackages = [
-		(import (../../addons/power_timer.nix) { inherit pkgs; })
-	];
 
 	system.stateVersion = "24.11";
 }
