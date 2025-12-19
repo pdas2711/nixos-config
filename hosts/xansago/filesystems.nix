@@ -7,7 +7,7 @@
 
 	# Filesystem for boot device
 	fileSystems."/boot" = {
-		device = "A85E-E5AF";
+		device = "/dev/disk/by-uuid/A85E-E5AF";
 		fsType = "vfat";
 		options = [ "fmask=0022" "dmask=0022" ];
 	};
