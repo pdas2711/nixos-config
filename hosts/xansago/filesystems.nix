@@ -6,7 +6,7 @@
 	boot.initrd.luks.devices."root".device = "adde90b1-12c2-4d2d-ba77-c36bb83ce50f";
 
 	# Filesystem for boot device
-	filesystems."/boot" = {
+	fileSystems."/boot" = {
 		device = "A85E-E5AF";
 		fsType = "vfat";
 		options = [ "fmask=0022" "dmask=0022" ];
