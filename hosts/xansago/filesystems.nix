@@ -13,13 +13,9 @@
 	};
 
 	# Device target for root filesystem
-	let
-		root_target = "/dev/disk/by-uuid/52cf6217-82b9-43e2-bbc2-81b69c466c97";
-	in {
-		fileSystems = {
-			"/".device = root_target;
-			"/var".device = root_target;
-			"/home".device = root_target;
-		};
+	fileSystems = {
+		"/".device = "/dev/disk/by-uuid/52cf6217-82b9-43e2-bbc2-81b69c466c97";
+		"/var".device = "/dev/disk/by-uuid/52cf6217-82b9-43e2-bbc2-81b69c466c97";
+		"/home".device = "/dev/disk/by-uuid/52cf6217-82b9-43e2-bbc2-81b69c466c97";
 	};
 }
