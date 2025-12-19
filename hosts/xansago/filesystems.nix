@@ -1,9 +1,6 @@
 { ... }: {
 	# Import basic filesystem layout
-	let
-		common_dir = ../../common;
-	in
-		imports = [ common_dir + ./default_mounts.nix ];
+	imports = [ ../../common/default_mounts.nix ];
 
 	# LUKS root device target
 	boot.initrd.luks.devices."root".device = "adde90b1-12c2-4d2d-ba77-c36bb83ce50f";
