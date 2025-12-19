@@ -10,7 +10,7 @@
 	programs.uwsm.waylandCompositors = {
 		hyprland = {
 			prettyName = "Hyprland";
-			binPath = "${pkgs.hyprland}/bin/Hyprland";
+			binPath = "/run/current-system/sw/bin/Hyprland";
 		};
 	};
 	
