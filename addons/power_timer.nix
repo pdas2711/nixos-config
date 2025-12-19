@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 	# Group creation for power-timer
 	users.groups.power-timer = {};
 

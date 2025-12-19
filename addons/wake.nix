@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 	# Group creation for wake
 	users.groups.wake = {};
 
