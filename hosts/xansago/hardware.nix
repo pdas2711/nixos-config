@@ -4,7 +4,7 @@
 	];
 
 	# Kernel Modules
-	boot.initrd.availableKernelModules = [ "nvme" "ahci" "usb_storage" "usbhid" ];
+	boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "usbhid" ];
 	boot.kernelModules = [ "kvm-intel" ];
 
 	# Nixpkg platform target
