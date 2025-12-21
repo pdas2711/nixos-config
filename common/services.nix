@@ -7,7 +7,7 @@
 		enable = true;
 		maxretry = 5;
 		ignoreIP = [
-			"10.100.0.0/24" "192.168.1.0/24"  # Whitelist some subnets
+			"10.100.0.0/24" "192.168.1.0/24"  # Whitelisted devices on the Wireguard VPN or local home network
 		];
 		bantime = "4h"; # Ban IPs for the given time on the first ban
 		bantime-increment = {
