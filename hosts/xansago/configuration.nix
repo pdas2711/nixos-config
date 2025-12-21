@@ -12,6 +12,7 @@
 		../../common/wireguard.nix
 		../../addons/power_timer.nix
 		./filesystems.nix
+		./hardware.nix
 	];
 
 	# Hostname
