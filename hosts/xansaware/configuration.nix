@@ -28,7 +28,9 @@
 	};
 		
 	# Change Power Button behavior to Sleep on short-press
-	services.logind.extraConfig = ''HandlePowerKey=suspend'';
+	services.logind.settings.Login = {
+		HandlePowerKey = "suspend";
+	};
 
 	# Users
 	users.users = {
@@ -145,7 +147,7 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 		flac
 		openjdk
 		obs-studio
-		glxinfo
+		mesa-demos
 		jellyfin-web
 		jellyfin-ffmpeg
 		jellycli

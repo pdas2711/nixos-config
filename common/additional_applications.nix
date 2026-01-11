@@ -5,7 +5,7 @@
 		ffmpeg
 		mpv
 		qrencode
-		oathToolkit
+		oath-toolkit
 		pwgen
 		rtorrent
 		libcaca
