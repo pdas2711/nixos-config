@@ -21,6 +21,7 @@
 	environment.systemPackages = with pkgs; [
 		alacritty
 		zathura
+		imv
 		libreoffice
 		bemenu
 		brave
