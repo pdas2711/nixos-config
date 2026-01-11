@@ -12,5 +12,6 @@
 		libsixel
 		cowsay
 		jq
+		nbd
 	];
 }
