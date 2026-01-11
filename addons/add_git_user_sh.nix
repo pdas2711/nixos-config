@@ -1,5 +1,5 @@
 { pkgs, ... }:
-	pkgs.writeShellScriptBin "power-timer" ''
+	pkgs.writeShellScriptBin "add-git-user" ''
 if [[ ''${EUID} -ne 0 ]]; then
 	echo "You must run with 'sudo'."
 	exit
