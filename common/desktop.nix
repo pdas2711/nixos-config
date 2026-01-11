@@ -31,7 +31,7 @@
 		wl-clipboard
 		wlsunset
 		pavucontrol
-		(import ../addons/start_hyprland.nix { inherit pkgs; })
+		(import ../addons/start_hyprland_sh.nix { inherit pkgs; })
 	];
 	
 	# Enable Flatpak
