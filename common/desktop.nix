@@ -7,10 +7,13 @@
 	};
 	
 	# UWSM
-	programs.uwsm.waylandCompositors = {
-		hyprland = {
-			prettyName = "Hyprland";
-			binPath = "/run/current-system/sw/bin/Hyprland";
+	programs.uwsm = {
+		enable = true;
+		waylandCompositors = {
+			hyprland = {
+				prettyName = "Hyprland";
+				binPath = "/run/current-system/sw/bin/Hyprland";
+			};
 		};
 	};
 	

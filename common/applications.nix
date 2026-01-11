@@ -50,9 +50,6 @@
 		syntaxHighlighting.enable = true;
 	};
 	
-	# UWSM
-	programs.uwsm.enable = true;
-
 	# Git Config
 	programs.git = {
 		enable = true;
