@@ -5,7 +5,7 @@
 		fastfetch
 		tmux
 		wget
-		pkgsUnstable.git-filter-repo
+		git-filter-repo
 		gnupg
 		pinentry-tty
 		vlock
