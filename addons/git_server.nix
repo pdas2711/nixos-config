@@ -33,6 +33,9 @@
 		}
 	];
 
+	# Open Firewall
+	networking.firewall.allowedTCPPorts = [ 9418 ];
+
 	# Add add-git-user script to environment packages
 	environment.systemPackages = [ (import ./add_git_user_sh.nix { inherit pkgs; }) ];
 }
