@@ -1,7 +1,8 @@
 { config, inputs, lib, pkgs, pkgsUnstable, ... }: {
 	imports = [
 		../../common/misc.nix
-		../../common/applications.nix
+		../../common/base_applications.nix
+		../../common/additional_applications.nix
 		../../common/services.nix
 		../../common/desktop.nix
 		../../common/grub.nix
