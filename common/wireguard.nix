@@ -1,7 +1,9 @@
 { ... }: {
 	# Wireguard Setup
-	networking.nat.externalInterface = "enp5s0";
-	networking.nat.internalInterfaces = [ "wg0" ];
 	networking.wireguard.enable = true;
+	networking.nat.internalInterfaces = [ "wg0" ];
 	networking.wg-quick.interfaces.wg0.configFile = "/etc/wireguard/wg0.conf";
+
+	# Open Firewall
+	networking.firewall.allowedUDPPorts = [ 51820 ];
 }
