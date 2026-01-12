@@ -105,6 +105,7 @@
 
 	# Filebrowser
 	services.filebrowser = {
+		enable = true;
 		settings.address = "0.0.0.0";
 		openFirewall = true;
 		user = "root";
