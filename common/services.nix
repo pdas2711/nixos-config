@@ -24,7 +24,9 @@
 		settings = {
 			PasswordAuthentication = false;
 			PermitRootLogin = "no";
-			AuthenticationMethods = "publickey";
+			KbdInteractiveAuthentication = true;
+			AuthenticationMethods = "publickey,keyboard-interactive:pam";
+			UsePAM = true;
 		};
 		sftpServerExecutable = "internal-sftp";
 		extraConfig = ''
