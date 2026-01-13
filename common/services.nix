@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
 	# Logrotate
 	services.logrotate.enable = true;
 	
@@ -24,9 +24,7 @@
 		settings = {
 			PasswordAuthentication = false;
 			PermitRootLogin = "no";
-			KbdInteractiveAuthentication = true;
-			AuthenticationMethods = "publickey,keyboard-interactive:pam";
-			UsePAM = true;
+			AuthenticationMethods = lib.mkDefault "publickey";
 		};
 		sftpServerExecutable = "internal-sftp";
 		extraConfig = ''

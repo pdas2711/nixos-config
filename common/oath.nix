@@ -24,4 +24,11 @@ session required ${pkgs.linux-pam}/lib/security/pam_limits.so conf=${pkgs.linux-
 		};
 		oath.window = 30;
 	};
+
+	# Implementation of 2FA OATH in SSH
+	services.openssh.settings = {
+		KbdInteractiveAuthentication = true;
+		UsePAM = true;
+		AuthenticationMethods = "publickey,keyboard-interactive:pam";
+	};
 }
