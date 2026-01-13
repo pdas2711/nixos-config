@@ -9,9 +9,11 @@
 		../../common/initrd_crypt_askpass.nix
 		../../common/initrd_network.nix
 		../../common/networking.nix
+		../../common/oath.nix
 		../../common/wireless.nix
 		../../common/bluetooth.nix
 		../../common/wireguard.nix
+		../../common/virtualization.nix
 		../../addons/power_timer.nix
 		../../addons/git_server.nix
 		./filesystems.nix
