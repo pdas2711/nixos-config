@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 	# OATH 2FA for SSH
 	security.pam = {
 		services.sshd = {
