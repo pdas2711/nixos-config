@@ -12,6 +12,8 @@
 		libsixel
 		cowsay
 		jq
-		nbd
 	];
+	
+	# Enables NBD Kernel Module
+	programs.nbd.enable = true;
 }
