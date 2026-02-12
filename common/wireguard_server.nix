@@ -1,6 +1,6 @@
 { ... }: {
 	# Import firewall routing rule for wireguard
-	import = [ ./wireguard.init ]
+	import = [ ./wireguard_init.nix ]
 
 	# Wireguard Server Setup
 	networking.wireguard.enable = true;
