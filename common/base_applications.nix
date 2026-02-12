@@ -12,6 +12,7 @@
 		gopass
 		zoxide
 		zsh-syntax-highlighting
+		tree
 		stow
 		trash-cli
 		pciutils
