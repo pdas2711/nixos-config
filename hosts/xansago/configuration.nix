@@ -10,7 +10,7 @@
 		../../common/networking.nix
 		../../common/wireless.nix
 		../../common/bluetooth.nix
-		../../common/wireguard_init.nix
+		../../common/wireguard_client.nix
 		../../addons/power_timer.nix
 		./filesystems.nix
 		./hardware.nix
