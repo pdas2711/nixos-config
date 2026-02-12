@@ -2,6 +2,9 @@
 
 { pkgs, pkgsUnstable, ... }: {
 	environment.systemPackages = with pkgs; [
+		python3
+		pipx
+		ranger
 		ffmpeg
 		mpv
 		qrencode

@@ -12,9 +12,6 @@
 		gopass
 		zoxide
 		zsh-syntax-highlighting
-		python3
-		pipx
-		ranger
 		stow
 		trash-cli
 		pciutils
