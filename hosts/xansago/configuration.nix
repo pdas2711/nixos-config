@@ -30,6 +30,11 @@
 			createHome = true;
 		};
 	};
+	
+	# System-wide Packages
+	environment.systemPackages = with pkgs; [
+		sshfs
+	];
 
 	system.stateVersion = "24.11";
 }
