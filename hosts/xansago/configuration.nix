@@ -34,6 +34,7 @@
 	# System-wide Packages
 	environment.systemPackages = with pkgs; [
 		sshfs
+		brightnessctl
 	];
 
 	system.stateVersion = "24.11";
