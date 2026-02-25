@@ -9,7 +9,6 @@
 		gnupg
 		pinentry-tty
 		vlock
-		gopass
 		zoxide
 		zsh-syntax-highlighting
 		tree

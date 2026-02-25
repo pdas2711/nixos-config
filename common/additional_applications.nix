@@ -15,6 +15,7 @@
 		libsixel
 		cowsay
 		jq
+		gopass
 		nb
 	];
 	
