@@ -15,6 +15,7 @@
 		libsixel
 		cowsay
 		jq
+		nb
 	];
 	
 	# Enables NBD Kernel Module
