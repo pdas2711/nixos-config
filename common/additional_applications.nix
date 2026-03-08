@@ -17,6 +17,7 @@
 		jq
 		gopass
 		nb
+		remind
 	];
 	
 	# Enables NBD Kernel Module
