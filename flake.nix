@@ -21,7 +21,7 @@
 				modules = [
 					"${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
 					nixos-hardware.nixosModules.raspberry-pi-4
-					./xansawarejb/configuration.nix
+					./hosts/xansawarejb/configuration.nix
 				];
 			};
 			xansaserver = nixpkgs.lib.nixosSystem {
