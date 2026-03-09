@@ -7,6 +7,7 @@
 		../../common/grub.nix
 		../../common/networking.nix
 		../../common/wireless.nix
+		../../common/bluetooth.nix
 		./filesystems.nix
 		./hardware.nix
 
