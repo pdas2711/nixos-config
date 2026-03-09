@@ -5,7 +5,7 @@ This is the configuration setup for my personal use case of NixOS. It is broken 
 The configuration uses flakes and manages a couple different systems I run located in the hosts directory:
 
 - xansaware - the configuration for the main desktop PC I run
-- xansawarejb - the configuration for a Raspberry Pi 4 Model B which is responsible for allowing me to remotely turn on the xansaware host using WOL
+- xansawarejb - the configuration for a Raspberry Pi 4 Model B which is responsible for allowing me to remotely turn on the xansaware host using WoL (Wake-on-LAN)
 - xansago - the configuration for a lightweight laptop that I have
 - xansaserver - the configuration for a system I run as a server
 
