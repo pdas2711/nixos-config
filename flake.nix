@@ -29,7 +29,7 @@
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
-				modules = [ ./xansaserver/configuration.nix ];
+				modules = [ ./hosts/xansaserver/configuration.nix ];
 			};
 			xansago = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
