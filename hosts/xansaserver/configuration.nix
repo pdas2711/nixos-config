@@ -21,6 +21,9 @@
 
 	# Enable touchpad support
 	services.libinput.enable = true;
+
+	# Do nothing when the lid is closed since the host is a server running on a laptop
+	services.logind.lidSwitch = "ignore";
 	
 	# Main User
 	users.user = {
