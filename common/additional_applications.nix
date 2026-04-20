@@ -19,6 +19,7 @@
 		nb
 		remind
 		mdbook
+		newsboat
 	];
 	
 	# Enables NBD Kernel Module
