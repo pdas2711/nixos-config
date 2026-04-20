@@ -28,6 +28,7 @@
 		gcc
 		nbd
 		elinks
+		lsof
 	];
 
 	# Zsh
