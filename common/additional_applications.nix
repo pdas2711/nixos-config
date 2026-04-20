@@ -18,6 +18,7 @@
 		gopass
 		nb
 		remind
+		mdbook
 	];
 	
 	# Enables NBD Kernel Module
