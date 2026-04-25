@@ -12,6 +12,7 @@
 		../../common/oath.nix
 		../../common/wireless.nix
 		../../common/bluetooth.nix
+		../../common/printers.nix
 		../../common/wireguard_server.nix
 		../../common/virtualization.nix
 		../../addons/power_timer.nix
