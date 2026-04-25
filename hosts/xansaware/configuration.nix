@@ -141,6 +141,7 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 			address = "169.168.1.1";
 			prefixLength = 30;
 		} ];
+		wakeOnLan.enable = true;
 	};
 	networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 	networking.networkmanager.unmanaged = [ "interface-name:enp6s0" ];
