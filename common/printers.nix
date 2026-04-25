@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 	# Enable auto discovery of printers using the IPP Everywhere/Airprint protocol
 	services.avahi = {
 		enable = true;
@@ -14,10 +14,9 @@
 	};
 
 	# Enable Airscan support for scanner backend
-	hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+	hardware.sane.extraBackends = [
+		pkgs.sane-airscan
+		pkgs.hplipWithPlugin  # HP Officejet 5740 e-AIO uses proprietary HP plugin. This printer also supports Airscan for scanning.
+	];
 	services.udev.packages = [ pkgs.sane-airscan ];
-
-	# HP Officejet 5740 e-AIO uses proprietary HP plugin
-	# This printer also supports Airscan for scanning
-	hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 }
