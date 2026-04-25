@@ -21,5 +21,9 @@
 			pkgs.hplipWithPlugin  # HP Officejet 5740 e-AIO uses proprietary HP plugin. This printer also supports Airscan for scanning.
 		];
 	};
+	
+	# Disable detecting the webcam as a scanner
+	hardware.sane.disabledDefaultBackends = [ "v4l" ];
+
 	services.udev.packages = [ pkgs.sane-airscan ];
 }
