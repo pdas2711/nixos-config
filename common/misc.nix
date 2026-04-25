@@ -13,9 +13,6 @@
 		keyMap = "us";
 	};
 
-	# Enable printing via CUPS
-	services.printing.enable = true;
-
 	# Enable sound
 	services.pipewire = {
 		enable = true;
