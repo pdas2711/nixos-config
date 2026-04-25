@@ -65,6 +65,7 @@
 	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
 	     "steam"
 	     "steam-unwrapped"
+	     "hplip"  # HP Officejet 5740 e-AIO proprietary plugin
 	];
 
 	# Radicale CalDAV/CardDav Server

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 	# Enable auto discovery of printers using the IPP Everywhere/Airprint protocol
 	services.avahi = {
 		enable = true;
