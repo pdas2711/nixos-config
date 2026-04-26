@@ -20,6 +20,7 @@
 		remind
 		mdbook
 		newsboat
+		img2pdf
 	];
 	
 	# Enables NBD Kernel Module
