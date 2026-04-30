@@ -21,6 +21,7 @@
 		mdbook
 		newsboat
 		img2pdf
+		tabiew
 	];
 	
 	# Enables NBD Kernel Module
