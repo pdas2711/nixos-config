@@ -108,11 +108,11 @@
         "pomo": "pomo"
       },
       "locked": {
-        "lastModified": 1777684341,
-        "narHash": "sha256-NZQBK2+J1Ac9zWLha40dJC3LLaBudg41SK/cboJlCho=",
+        "lastModified": 1777693503,
+        "narHash": "sha256-EoG+qlHy1LLj8FJD2z+eiCQn9o4X/xRqdZFBoJ1z3/8=",
         "ref": "refs/heads/main",
-        "rev": "24294f71f40c2d081884f7033073f9727515513d",
-        "revCount": 8,
+        "rev": "794c854a85544c81a9f603fa680ea6c80343bbde",
+        "revCount": 15,
         "type": "git",
         "url": "file:///srv/git/users/pdas2711/xansapkgs.git"
       },
