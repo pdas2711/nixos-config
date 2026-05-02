@@ -3,16 +3,18 @@
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+		xansapkgs.url = "git+file:///srv/git/users/pdas2711/xansapkgs.git";
 		nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = { self, nixpkgs, nixpkgsUnstable, nixos-hardware, ... }: {
+	outputs = { self, xansapkgs, nixpkgs, nixpkgsUnstable, nixos-hardware, ... }: {
 		nixosConfigurations = {
 			xansaware = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
+					xansapkgs = xansapkgs.packages."x86_64-linux";
 				};
 				modules = [ ./hosts/xansaware/configuration.nix ];
 			};
