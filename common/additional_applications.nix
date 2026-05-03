@@ -22,6 +22,7 @@
 		newsboat
 		img2pdf
 		tabiew
+		typst
 	];
 	
 	# Enables NBD Kernel Module
