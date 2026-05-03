@@ -17,7 +17,6 @@
 		jq
 		gopass
 		nb
-		remind
 		mdbook
 		newsboat
 		img2pdf
