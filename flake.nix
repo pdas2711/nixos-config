@@ -5,10 +5,10 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 		xansapkgs.url = "git+file:///srv/git/users/pdas2711/xansapkgs.git";
 		nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+		nixosHardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = { self, xansapkgs, nixpkgs, nixpkgsUnstable, nixos-hardware, ... }: {
+	outputs = { self, xansapkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }: {
 		nixosConfigurations = {
 			xansaware = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
@@ -22,7 +22,7 @@
 				system = "aarch64-linux";
 				modules = [
 					"${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
-					nixos-hardware.nixosModules.raspberry-pi-4
+					nixosHardware.nixosModules.raspberry-pi-4
 					./hosts/xansawarejb/configuration.nix
 				];
 			};
