@@ -13,5 +13,16 @@
 				hostKeys = [ "/etc/ssh/initrd/ssh_host_ed25519_key" ];
 			};
 		};
+		systemd.services.initrd-ssh-unlock = {
+			description = "Enable automatic unlocking of LUKS via SSH";
+			wantedBy = [ "initrd.target" ];
+			before = [ "initrd-root-fs.target" ];
+			unitConfig.DefaultDependencies = false;
+			script = ''
+				mkdir -p /var/empty
+				echo "systemd-tty-ask-password-agent --watch" > /var/empty/.profile
+			'';
+			serviceConfig.Type = "oneshot";
+		};
 	};
 }
