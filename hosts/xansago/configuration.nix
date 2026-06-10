@@ -6,7 +6,6 @@
 		../../common/services.nix
 		../../common/desktop.nix
 		../../common/grub.nix
-		../../common/initrd_crypt_askpass.nix
 		../../common/networking.nix
 		../../common/wireless.nix
 		../../common/bluetooth.nix

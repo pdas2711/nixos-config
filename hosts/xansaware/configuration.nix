@@ -6,7 +6,6 @@
 		../../common/services.nix
 		../../common/desktop.nix
 		../../common/grub.nix
-		../../common/initrd_crypt_askpass.nix
 		../../common/initrd_network.nix
 		../../common/networking.nix
 		../../common/oath.nix

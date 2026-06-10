@@ -3,7 +3,6 @@
 		../../common/misc.nix
 		../../common/base_applications.nix
 		../../common/services.nix
-		../../common/initrd_crypt_askpass.nix
 		../../common/grub.nix
 		../../common/networking.nix
 		../../common/wireless.nix
