@@ -20,7 +20,8 @@
 			unitConfig.DefaultDependencies = false;
 			script = ''
 				mkdir -p /var/empty
-				echo "systemd-tty-ask-password-agent --watch" > /var/empty/.profile
+				echo "exec systemd-tty-ask-password-agent --watch" > /var/empty/.profile
+				chmod 755 /var/empty/.profile
 			'';
 			serviceConfig.Type = "oneshot";
 		};
