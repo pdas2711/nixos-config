@@ -60,6 +60,7 @@
 		adminPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHYAK7Q01dgyiL4cpgq29Xw+ovM+le7vXPK9ASHriTI pdas2711@xansaware";
 		extraGitoliteRc = ''
 push( @{$RC{ENABLE}}, 'WildRepo' );
+push( @{$RC{ENABLE}}, 'D' );
 $GL_WILDREPOS = 1;
 		'';
 	};
