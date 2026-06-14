@@ -15,7 +15,6 @@
 		../../common/wireguard_server.nix
 		../../common/virtualization.nix
 		../../addons/power_timer.nix
-		../../addons/git_server.nix
 		./filesystems.nix
 		./hardware.nix
 	];
@@ -52,6 +51,14 @@
 
 	# Ignore 2FA for members in group 'ignoreoath'
 	users.groups.ignoreoath.members = [ "git" ];
+
+	# Gitolite
+	services.gitolite = {
+		enable = true;
+		user = "git";
+		group = "git";
+		adminPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHYAK7Q01dgyiL4cpgq29Xw+ovM+le7vXPK9ASHriTI pdas2711@xansaware";
+	};
 
 	# Steam
 	programs.steam = {
