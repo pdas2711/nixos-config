@@ -29,6 +29,7 @@
 		nbd
 		elinks
 		lsof
+		e2fsprogs
 	];
 
 	# Zsh
