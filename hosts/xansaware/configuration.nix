@@ -3,7 +3,7 @@
 		../../common/misc.nix
 		../../common/base_applications.nix
 		../../common/additional_applications.nix
-		../../common/services.nix
+		../../common/remote.nix
 		../../common/desktop.nix
 		../../common/grub.nix
 		../../common/initrd_network.nix

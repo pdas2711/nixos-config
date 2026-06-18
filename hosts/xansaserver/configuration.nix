@@ -2,7 +2,7 @@
 	imports = [
 		../../common/misc.nix
 		../../common/base_applications.nix
-		../../common/services.nix
+		../../common/remote.nix
 		../../common/grub.nix
 		../../common/networking.nix
 		../../common/wireless.nix
