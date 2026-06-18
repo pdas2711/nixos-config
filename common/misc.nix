@@ -42,4 +42,10 @@
 	
 	# Logrotate
 	services.logrotate.enable = true;
+
+	# Enable Polkit
+	security.polkit.enable = true;
+
+	# Enable mounting USB devices
+	services.udisks2.enable = true;
 }
