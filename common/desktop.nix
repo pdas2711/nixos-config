@@ -33,7 +33,6 @@
 		wlsunset
 		pavucontrol
 		thunderbird
-		#(import ../addons/start_hyprland_sh.nix { inherit pkgs; })
 	];
 	
 	# Enable Flatpak
