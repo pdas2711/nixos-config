@@ -1,7 +1,4 @@
 { lib, ... }: {
-	# Logrotate
-	services.logrotate.enable = true;
-	
 	# Fail2Ban
 	services.fail2ban = {
 		enable = true;

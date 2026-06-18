@@ -39,4 +39,7 @@
 
 	# Enable sudo
 	security.sudo.enable = true;
+	
+	# Logrotate
+	services.logrotate.enable = true;
 }
