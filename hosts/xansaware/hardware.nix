@@ -5,7 +5,7 @@
 
 	# Kernel Modules
 	boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "igb" ];
-	boot.initrd.kernelModules = [ "igb" ];
+	boot.initrd.kernelModules = [ "igb" "amdgpu" ];
 	boot.kernelModules = [ "kvm-amd" ];
 
 	# Nixpkg platform target
