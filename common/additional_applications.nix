@@ -25,4 +25,7 @@
 	
 	# Enables NBD Kernel Module
 	programs.nbd.enable = true;
+
+	# Xonsh Shell
+	programs.xonsh.enable = true;
 }
