@@ -4,6 +4,7 @@
 	environment.systemPackages = with pkgs; [
 		python3
 		ranger
+		yazi
 		ffmpeg
 		mpv
 		qrencode

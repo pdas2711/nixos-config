@@ -20,6 +20,7 @@
 	# GUI Applications
 	environment.systemPackages = with pkgs; [
 		alacritty
+		kitty
 		zathura
 		imv
 		libreoffice
