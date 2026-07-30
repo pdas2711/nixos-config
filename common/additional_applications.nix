@@ -22,6 +22,7 @@
 		img2pdf
 		tabiew
 		typst
+		fzf
 	];
 	
 	# Enables NBD Kernel Module
