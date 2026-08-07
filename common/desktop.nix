@@ -29,6 +29,7 @@
 		hyprpaper
 		hyprlock
 		hyprshot
+		hyprshell
 		waybar
 		wl-clipboard
 		wlsunset
