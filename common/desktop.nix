@@ -24,6 +24,7 @@
 		zathura
 		imv
 		libreoffice
+		xournalpp
 		bemenu
 		brave
 		hyprpaper
