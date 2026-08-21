@@ -48,4 +48,9 @@
 
 	# Enable mounting USB devices
 	services.udisks2.enable = true;
+
+	# Add timeout to emergency prompt rather than waiting for user input indefinitely
+	systemd.services.emergency.serviceConfig = {
+		ExecStart = [ "" "${pkgs.systemd}/bin/sulogin --timeout 30" ];
+	};
 }
