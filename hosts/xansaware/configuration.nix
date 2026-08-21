@@ -37,7 +37,7 @@
 	users.users = {
 		pdas2711 = {
 			isNormalUser = true;
-			extraGroups = [ "wheel" "libvirtd" "power-timer" ];
+			extraGroups = [ "wheel" "libvirtd" "power-timer" "video" "input" "seat" ];
 			createHome = true;
 		};
 		guest = {
@@ -124,6 +124,8 @@ $GL_WILDREPOS = 1;
 		settings.address = "0.0.0.0";
 		openFirewall = true;
 	};
+
+	services.seatd.enable = true;
 	
 	# Crypttab Configuration
 	environment.etc.crypttab.text = ''backup_root	/dev/disk/by-uuid/823f75c2-3c8b-4ebd-b20c-3ac86de1028f	/var/lib/private/luks_keys/backup_drive.key
