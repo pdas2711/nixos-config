@@ -124,7 +124,8 @@ $GL_WILDREPOS = 1;
 		settings.address = "0.0.0.0";
 		openFirewall = true;
 	};
-
+	
+	# SeatD for more permissive seat creation
 	services.seatd.enable = true;
 	
 	# Crypttab Configuration
