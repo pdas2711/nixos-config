@@ -127,6 +127,14 @@ $GL_WILDREPOS = 1;
 	
 	# SeatD for more permissive seat creation
 	services.seatd.enable = true;
+
+	# Sunshine Game Streaming
+	services.sunshine = {
+		enable = true;
+		autoStart = true;
+		capSysAdmin = true;
+		openFirewall = true;
+	};
 	
 	# Crypttab Configuration
 	environment.etc.crypttab.text = ''backup_root	/dev/disk/by-uuid/823f75c2-3c8b-4ebd-b20c-3ac86de1028f	/var/lib/private/luks_keys/backup_drive.key
