@@ -26,7 +26,7 @@
 	};
 
 	# Jellyfin Media Drive
-	fileSystems."/mnt/jellyfin-media" = {
+	fileSystems."/mnt/jellyfin_media" = {
 		device = "/dev/mapper/jellyfin";
 		fsType = "btrfs";
 		options = [ "subvol=@" ];
