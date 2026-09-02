@@ -25,7 +25,7 @@
 	services.logind.lidSwitch = "ignore";
 	
 	# Main User
-	users.user = {
+	users.users = {
 		pdas2711 = {
 			isNormalUser = true;
 			extraGroups = [ "wheel" ];
