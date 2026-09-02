@@ -22,6 +22,7 @@
 		tabiew
 		typst
 		fzf
+		wtfutil
 	];
 	
 	# Enables NBD Kernel Module
