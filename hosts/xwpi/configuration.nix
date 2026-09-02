@@ -157,7 +157,7 @@ AllowTcpForwarding yes'';
 	services.nginx = {
                 enable = true;
                 virtualHosts."xansaware.ddns.net" = {
-                        serverAliases = [ "xansawarejb.local" ];
+                        serverAliases = [ "xwpi.local" ];
                         root = "/var/www";
                 };
         };
