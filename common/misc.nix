@@ -25,6 +25,22 @@
 		gc.automatic = true;
 		gc.options = "--delete-older-than 15d";
 	};
+
+	# Nix Remote Deployer
+	users.users.nixos = {
+		isNormalUser = true;
+	};
+
+	security.sudo.extraRules = [
+		{
+			users = [ "nixos" ];
+			commands = [
+				{ command = "ALL"; options = [ "NOPASSWD" ]; }
+			];
+		}
+	];
+
+	nix.settings.trusted-users = [ "nixos" ];
 	
 	# /etc config files
 	environment.etc = {
