@@ -16,7 +16,7 @@
 	boot.loader.grub.efiInstallAsRemovable = true;
 
 	# Hostname
-	networking.hostName = "xansaserver";
+	networking.hostName = "xwserver";
 
 	# Enable touchpad support
 	services.libinput.enable = true;

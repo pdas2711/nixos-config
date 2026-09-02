@@ -24,7 +24,7 @@
 
 	# networking config. important for ssh!
 	networking = {
-		hostName = "xansawarejb";
+		hostName = "xwpi";
                 networkmanager = {
                         enable = true;  # Easiest to use and most distros use this by default.
 			wifi.powersave = false;

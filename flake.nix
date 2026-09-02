@@ -18,27 +18,27 @@
 				};
 				modules = [ ./hosts/xansaware/configuration.nix ];
 			};
-			xansawarejb = nixpkgs.lib.nixosSystem {
+			xwpi = nixpkgs.lib.nixosSystem {
 				system = "aarch64-linux";
 				modules = [
 					"${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
 					nixosHardware.nixosModules.raspberry-pi-4
-					./hosts/xansawarejb/configuration.nix
+					./hosts/xwpi/configuration.nix
 				];
 			};
-			xansaserver = nixpkgs.lib.nixosSystem {
+			xwserver = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
-				modules = [ ./hosts/xansaserver/configuration.nix ];
+				modules = [ ./hosts/xwserver/configuration.nix ];
 			};
-			xansago = nixpkgs.lib.nixosSystem {
+			xwgo = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
-				modules = [ ./hosts/xansago/configuration.nix ];
+				modules = [ ./hosts/xwgo/configuration.nix ];
 			};
 		};
 	};
