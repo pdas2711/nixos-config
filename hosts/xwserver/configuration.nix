@@ -57,5 +57,28 @@
 		openFirewall = true;
 	};
 
+	# Monero Node
+	services.monero = {
+		enable = true;
+		rpc = {
+			address = "0.0.0.0";
+			port = 18089;
+			restricted = true;
+		};
+		extraConfig = ''
+		public-node=1
+		confirm-external-bind=1
+		'';
+	};
+
+	# Firewall
+	networking.firewall = {
+		enable = true;
+		allowedTCPPorts = [
+			18080  # Monero P2P
+			18089  # Restricted RPC
+		];
+	};
+
 	system.stateVersion = "24.11";
 }
