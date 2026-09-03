@@ -22,7 +22,7 @@
 	services.libinput.enable = true;
 
 	# Do nothing when the lid is closed since the host is a server running on a laptop
-	services.logind.lidSwitch = "ignore";
+	services.logind.settings.Login.HandleLidSwitch = "ignore";
 	
 	# Main User
 	users.users = {
