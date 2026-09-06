@@ -23,6 +23,7 @@
 		typst
 		fzf
 		wtfutil
+		peaclock
 	];
 	
 	# Enables NBD Kernel Module
