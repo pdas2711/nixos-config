@@ -66,8 +66,9 @@
 			restricted = true;
 		};
 		extraConfig = ''
-		public-node=1
-		confirm-external-bind=1
+public-node=1
+db-sync-mode=safe
+confirm-external-bind=1
 		'';
 	};
 
