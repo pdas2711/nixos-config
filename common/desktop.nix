@@ -10,6 +10,9 @@
 		];
 	};
 
+	# Niri
+	programs.niri.enable = true;
+
 	# XDG Portal
 	xdg.portal = {
 		enable = true;
@@ -50,6 +53,7 @@
 		wlsunset
 		pavucontrol
 		thunderbird
+		xwayland-satellite  # For niri
 	];
 	
 	# Enable Flatpak
