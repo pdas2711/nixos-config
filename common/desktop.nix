@@ -54,6 +54,8 @@
 		pavucontrol
 		thunderbird
 		xwayland-satellite  # For niri
+		swaybg
+		swaylock
 	];
 	
 	# Enable Flatpak
