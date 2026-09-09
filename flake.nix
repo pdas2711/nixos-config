@@ -6,13 +6,16 @@
 		xwpkgs.url = "github:pdas2711/xwpkgs";
 		nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 		nixosHardware.url = "github:NixOS/nixos-hardware/master";
+		hyprland.url = "github:hyprwm/Hyprland";
+		hyprland_scroll_overview.url = "github:yayuuu/hyprland-scroll-overview";
 	};
 
-	outputs = { self, xwpkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }: {
+	outputs = { self, xwpkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }@inputs: {
 		nixosConfigurations = {
 			xansaware = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
+					inherit inputs;
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 					xwpkgs = xwpkgs.packages."x86_64-linux";
 				};
