@@ -114,26 +114,26 @@
         "nixosHardware": "nixosHardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgsUnstable": "nixpkgsUnstable",
-        "xansapkgs": "xansapkgs"
+        "xwpkgs": "xwpkgs"
       }
     },
-    "xansapkgs": {
+    "xwpkgs": {
       "inputs": {
         "audioshare": "audioshare",
         "nixpkgs": "nixpkgs_3",
         "pomo": "pomo"
       },
       "locked": {
-        "lastModified": 1777693503,
-        "narHash": "sha256-EoG+qlHy1LLj8FJD2z+eiCQn9o4X/xRqdZFBoJ1z3/8=",
+        "lastModified": 1788922702,
+        "narHash": "sha256-8V4m6Y8UK6v0ECmlExavMEPDeimyDJmzEzsbl3tqYCs=",
         "owner": "pdas2711",
-        "repo": "xansapkgs",
-        "rev": "794c854a85544c81a9f603fa680ea6c80343bbde",
+        "repo": "xwpkgs",
+        "rev": "bd142a2f5d500786fb6596f2ecc4cf3893a6b03d",
         "type": "github"
       },
       "original": {
         "owner": "pdas2711",
-        "repo": "xansapkgs",
+        "repo": "xwpkgs",
         "type": "github"
       }
     }

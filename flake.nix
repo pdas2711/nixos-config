@@ -8,13 +8,13 @@
 		nixosHardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = { self, xansapkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }: {
+	outputs = { self, xwpkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }: {
 		nixosConfigurations = {
 			xansaware = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
-					xansapkgs = xansapkgs.packages."x86_64-linux";
+					xwpkgs = xwpkgs.packages."x86_64-linux";
 				};
 				modules = [ ./hosts/xansaware/configuration.nix ];
 			};
