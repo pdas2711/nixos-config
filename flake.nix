@@ -6,8 +6,6 @@
 		xwpkgs.url = "github:pdas2711/xwpkgs";
 		nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 		nixosHardware.url = "github:NixOS/nixos-hardware/master";
-		hyprland.url = "github:hyprwm/Hyprland";
-		hyprland_scroll_overview.url = "github:yayuuu/hyprland-scroll-overview";
 	};
 
 	outputs = { self, xwpkgs, nixpkgs, nixpkgsUnstable, nixosHardware, ... }@inputs: {
