@@ -23,6 +23,7 @@
 			};
 			xwpi = nixpkgs.lib.nixosSystem {
 				system = "aarch64-linux";
+				specialArgs = { inherit inputs; };
 				modules = [
 					"${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel-no-zfs-installer.nix"
 					nixosHardware.nixosModules.raspberry-pi-4
@@ -32,6 +33,7 @@
 			xwserver = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
+					inherit inputs;
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
 				modules = [ ./hosts/xwserver/configuration.nix ];
@@ -39,6 +41,7 @@
 			xwgo = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
+					inherit inputs;
 					pkgsUnstable = nixpkgsUnstable.legacyPackages."x86_64-linux";
 				};
 				modules = [ ./hosts/xwgo/configuration.nix ];
