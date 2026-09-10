@@ -65,8 +65,6 @@
 	# Enable mounting USB devices
 	services.udisks2.enable = true;
 
-	# Add timeout to emergency prompt rather than waiting for user input indefinitely
-	systemd.services.emergency.serviceConfig = {
-		ExecStart = [ "" "${pkgs.systemd}/bin/sulogin --timeout 30" ];
-	};
+	# Remove emergency shell so the user isn't waiting indefinitely during the boot process
+	boot.kernelParams = [ "systemd.emergency_action=none" ];
 }
