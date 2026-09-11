@@ -72,13 +72,6 @@ $GL_WILDREPOS = 1;
 		dedicatedServer.openFirewall = true;
 	};
 
-	# Allowing Unfree Packages
-	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-	     "steam"
-	     "steam-unwrapped"
-	     "hplip"  # HP Officejet 5740 e-AIO proprietary plugin
-	];
-
 	# Radicale CalDAV/CardDav Server
 	services.radicale = {
 		enable = true;
@@ -193,7 +186,15 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 		xwpkgs.pomo
 		xwpkgs.audioshare
 	];
-	
+
+	# Allowing Unfree Packages
+	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+	     "steam"
+	     "steam-unwrapped"
+	     "hplip"  # HP Officejet 5740 e-AIO proprietary plugin
+	     "veracrypt"
+	];
+
 	# System State
 	system.stateVersion = "24.11";
 }
