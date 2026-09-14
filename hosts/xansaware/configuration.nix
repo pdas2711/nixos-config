@@ -127,6 +127,12 @@ $GL_WILDREPOS = 1;
 		autoStart = true;
 		capSysAdmin = true;
 		openFirewall = true;
+		settings = {
+			csrf_allowed_origins = "https://localhost:47990,https://10.100.0.1:47990";
+			output_name = 1;
+			adapter_name = "/dev/dri/renderD128";
+			capture = "kms";
+		};
 	};
 	
 	# Crypttab Configuration
