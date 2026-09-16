@@ -124,7 +124,7 @@ $GL_WILDREPOS = 1;
 	# Sunshine Game Streaming
 	services.sunshine = {
 		enable = true;
-		autoStart = true;
+		autoStart = false;
 		capSysAdmin = true;
 		openFirewall = true;
 		settings = {
