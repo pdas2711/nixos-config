@@ -66,5 +66,5 @@
 	services.udisks2.enable = true;
 
 	# Remove emergency shell so the user isn't waiting indefinitely during the boot process
-	boot.kernelParams = [ "systemd.emergency_action=none" ];
+	systemd.enableEmergencyMode = false;
 }
