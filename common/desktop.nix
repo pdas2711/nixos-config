@@ -53,6 +53,11 @@
 		xwayland-satellite  # For niri
 		swaybg
 		swaylock
+
+		# Cursor Theme Packages
+		catppuccin-cursors.mochaSapphire
+		catppuccin-cursors.mochaBlue
+
 	];
 	
 	# Enable Flatpak
