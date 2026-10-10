@@ -37,7 +37,7 @@
 	users.users = {
 		pdas2711 = {
 			isNormalUser = true;
-			extraGroups = [ "wheel" "libvirtd" "power-timer" "video" "input" "seat" ];
+			extraGroups = [ "wheel" "libvirtd" "power-timer" "video" "uinput" "seat" ];
 			createHome = true;
 		};
 		guest = {
