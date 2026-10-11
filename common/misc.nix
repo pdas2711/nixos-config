@@ -67,4 +67,19 @@
 
 	# Remove emergency shell so the user isn't waiting indefinitely during the boot process
 	systemd.enableEmergencyMode = false;
+
+	# Use kmscon for the TTY terminal instead of the built-in kernel VT
+	services.kmscon = {
+		enable = true;
+		hwRender = true;
+		extraConfig = ''
+multi-monitor=clone
+		'';
+		fonts = [
+			{
+				name = "JetBrainsMono Nerd Font Mono";
+				package = pkgs.nerd-fonts.jetbrains-mono;
+			}
+		];
+	};
 }
