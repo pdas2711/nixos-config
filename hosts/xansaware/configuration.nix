@@ -124,12 +124,13 @@ $GL_WILDREPOS = 1;
 	# Sunshine Game Streaming
 	services.sunshine = {
 		enable = true;
+		package = pkgsUnstable.sunshine;
 		autoStart = false;
 		capSysAdmin = true;
 		openFirewall = true;
 		settings = {
 			csrf_allowed_origins = "https://localhost:47990,https://10.100.0.1:47990";
-			output_name = 1;
+			output_name = "DP-2";
 			adapter_name = "/dev/dri/renderD128";
 			capture = "kms";
 		};
