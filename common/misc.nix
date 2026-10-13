@@ -73,8 +73,26 @@
 		enable = true;
 		hwRender = true;
 		extraConfig = ''
-multi-monitor=clone
-		'';
+palette=custom
+palette-black=69,71,90
+palette-red=243,139,168
+palette-green=166,227,161
+palette-yellow=249,226,175
+palette-blue=137,180,250
+palette-magenta=245,194,231
+palette-cyan=148,226,213
+palette-dark-grey=88,91,112
+palette-light-red=235,160,172
+palette-light-green=166,227,161
+palette-light-yellow=250,179,135
+palette-light-blue=116,199,236
+palette-light-magenta=242,205,205
+palette-light-cyan=137,220,235
+palette-light-grey=166,173,200
+palette-white=205,214,244
+palette-foreground=205,214,244
+palette-background=30,30,46
+'';
 		fonts = [
 			{
 				name = "JetBrainsMono Nerd Font Mono";
