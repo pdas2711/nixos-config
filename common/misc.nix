@@ -73,6 +73,8 @@
 		enable = true;
 		hwRender = true;
 		extraConfig = ''
+font-size=24
+
 palette=custom
 palette-black=69,71,90
 palette-red=243,139,168
