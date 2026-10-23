@@ -194,6 +194,7 @@ backup_jellyfin	/dev/disk/by-uuid/d9fa1d9a-86dd-4d89-b9d5-9254f27b7186	/var/lib/
 		android-tools
 		xwpkgs.pomo
 		xwpkgs.audioshare
+		adbfs-rootless
 	];
 
 	# Allowing Unfree Packages
