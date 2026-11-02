@@ -7,7 +7,7 @@ function show_date() {
 	done
 }
 
-PIDFILE="$XDG_RUNTIME_DIR/display-time.pid"
+PIDFILE="''${XDG_RUNTIME_DIR}/display-time.pid"
 
 if [[ -s "''${PIDFILE}" ]] && kill -0 "$(cat "''${PIDFILE}")" 2>/dev/null; then
 	kill "$(cat "''${PIDFILE}")"
