@@ -58,6 +58,8 @@
 		catppuccin-cursors.mochaSapphire
 		catppuccin-cursors.mochaBlue
 
+		# Import custom scripts
+		(import ../addons/display_time_sh.nix { inherit pkgs; })
 	];
 	
 	# Enable Flatpak
