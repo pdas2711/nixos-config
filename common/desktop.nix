@@ -61,6 +61,7 @@
 
 		# Import custom scripts
 		(import ../addons/display_time_sh.nix { inherit pkgs; })
+		(import ../addons/display_volume_sh.nix { inherit pkgs; })
 	];
 	
 	# Enable Flatpak
