@@ -53,6 +53,7 @@
 		xwayland-satellite  # For niri
 		swaybg
 		swaylock
+		wob
 
 		# Cursor Theme Packages
 		catppuccin-cursors.mochaSapphire
